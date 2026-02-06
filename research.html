@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | David Torres</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <aside class="sidebar">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-text">Home</span>
+                </a>
+            </li>
+        </ul>
+        
+        <ul>
+            <li><p><strong>R&D Projects</strong></p></li> <li>
+                <a href="research.html">
+                    <i class="fas fa-project-diagram"></i> <span class="nav-text">Research & Prototyping</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul>
+            <li><p><strong>Professional</strong></p></li>
+            <li>
+                <a href="industrial.html">
+                    <i class="fas fa-industry"></i>
+                    <span class="nav-text">Industrial Exp.</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul>
+            <li><p><strong>Leadership</strong></p></li>
+            <li>
+                <a href="leadership.html">
+                    <i class="fas fa-users"></i> <span class="nav-text">Community & Teaching</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <header>
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <h2 style="color: var(--primary-accent); margin: 0;">Research & Development</h2>
+            <div class="social-links">
+                <a href="#" style="color: var(--text-dark);"><i class="fab fa-github fa-lg"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="swarm" class="content-box">
+            <h3 class="section-title"><i class="fas fa-cubes"></i> Swarm Robotic Manipulation</h3>
+            <p class="tagline" style="font-size: 1rem;">Decentralized Control for Construction-Oriented Tasks | <em>Thesis 2024</em></p>
+            
+            <div class="project-detail-grid">
+                <div class="project-text">
+                    <p>
+                        This research addresses the challenge of <strong>collective transport and manipulation</strong> in unstructured environments. 
+                        I developed a decentralized control architecture using Robot Operaing System (ROS) and Gazebo Simulator.
+                        The agents were given the task to 
+                    </p>
+                    <ul class="custom-list">
+                        <li><i class="fas fa-code-branch list-icon"></i> <strong>Stack: </strong> ROS (Noetic), Python, C++.</li>
+                        <li><i class="fas fa-robot list-icon"></i> <strong>Simulation: </strong> ARGoS (Large scale) & Gazebo Classic (Physics).</li>
+                        <li><i class="fas fa-check-circle list-icon"></i> <strong>Result: </strong> Validated scalability with up to 12 agents in simulation and an implemented physical unit.</li>
+                    </ul>
+                </div>
+                
+                <div class="media-wrapper">
+                    <video controls class="styled-video" poster="assets/img/Qupa_sim.png">
+                        <source src="assets/videos/qupa_collective.mp4" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                    <p class="caption">Demo: Decentralized Collective Transport</p>
+                </div>
+            </div>
+        </section>
+        <section id="thesis_photos" class="content-box">
+            <div class="slider-viewport">
+                <div class="slider-track" id="track">
+                    
+                    <div class="slide">
+                        <img src="assets/img/module 3D.png" alt="Robot Design">
+                        <div class="slide-caption">Diseño Mecánico</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/img/Modelo_final.jpg" alt="Robot Design">
+                        <div class="slide-caption">Implementación</div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets/img/Qupa_sim.png" alt="Simulation">
+                        <div class="slide-caption">Simulación</div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets/img/qupa_leds.jpg" alt="Real World">
+                        <div class="slide-caption">Prueba LED</div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets/img/bloobs_leds.png" alt="Real World">
+                        <div class="slide-caption">Pruebas ARGoS</div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets/img/Real vs Sim.png" alt="Real World">
+                        <div class="slide-caption">Diferencias fisicas</div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets/img/Test_real.jpg" alt="Real World">
+                        <div class="slide-caption">Pruebas Físicas</div>
+                    </div>
+
+                    <div class="slide">
+                        <img src="assets/img/Espejo.png" alt="Real World">
+                        <div class="slide-caption">Pruebas Espejo Hiperbolico</div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- <div class="architecture-section" style="margin-top: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px;">
+                <h4 style="color: var(--primary-accent);">System Architecture</h4>
+                <p>Decentralized state machine implemented in each agent using ROS 2 Humble.</p>
+                <img src="assets/ros_graph_architecture.png" alt="ROS Graph" style="width: 100%; border-radius: 4px; margin-top: 10px;">
+            </div> -->
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
+
+        <section id="navigation" class="content-box">
+            <h3 class="section-title"><i class="fas fa-route"></i> Autonomous Navigation & Racing</h3>
+            <p class="tagline" style="font-size: 1rem;">High-Speed Navigation & Obstacle Avoidance | <em>Roboracer Ecuador Champion</em></p>
+            
+            <div class="project-detail-grid">
+                <div class="project-media">
+                    <div class="video-placeholder">
+                        <i class="fas fa-car-side" style="font-size: 40px; color: #555;"></i>
+                        <p>Race Highlights</p>
+                        </div>
+                </div>
+
+                <div class="project-text">
+                    <p>
+                        Leading the <strong>AIROS</strong> team, we developed a high-speed navigation stack capable of dynamic obstacle avoidance. 
+                        Additionally, in collaboration with <strong>SKKU (South Korea)</strong>, I benchmarked perception pipelines using LiDAR and Depth Cameras.
+                    </p>
+                    <ul class="custom-list">
+                        <li><i class="fas fa-layer-group list-icon"></i> <strong>Tech:</strong> Nav2, Slam_toolbox, Adaptive Monte Carlo Localization (AMCL).</li>
+                        <li><i class="fas fa-microchip list-icon"></i> <strong>Hardware:</strong> NVIDIA Jetson Nano, LiDAR RPLidar A1.</li>
+                        <li><i class="fas fa-trophy list-icon"></i> <strong>Achievement:</strong> 1st Place at Roboracer Ecuador 2024.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
+
+        <section id="prototyping" class="content-box">
+            <h3 class="section-title"><i class="fas fa-hand-holding-medical"></i> Assistive Technology</h3>
+            <p class="tagline">Industrial Prosthetic Prototype | <em>Bio-Mechatronics</em></p>
+            
+            <div class="project-detail-grid">
+                <div class="project-text">
+                    <p>Design and fabrication of a low-cost industrial prosthesis focused on functionality and accessibility.</p>
+                    <ul class="custom-list">
+                        <li><i class="fas fa-drafting-compass list-icon"></i> <strong>CAD/CAM:</strong> Designed in Fusion 360 optimized for 3D printing.</li>
+                        <li><i class="fas fa-microchip list-icon"></i> <strong>Control:</strong> EMG signal processing for intuitive user control.</li>
+                    </ul>
+                </div>
+                <div class="project-media">
+                    </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2024 David Torres | <a href="index.html" style="color: var(--primary-accent);">Back to Home</a></p>
+    </footer>
+
+    <script>
+        const track = document.getElementById('track');
+        // Obtenemos todos los slides
+        const slides = document.querySelectorAll('.slide');
+        
+        let index = 0;
+        // Configuración: Cuántas fotos se ven a la vez
+        const slidesPerView = 3; 
+        // Límite: Total de fotos menos las que ya se ven
+        const maxIndex = slides.length - slidesPerView; 
+
+        function nextSlide() {
+            index++;
+            
+            // Si llegamos al final, volvemos al principio suavemente
+            if (index > maxIndex) {
+                index = 0;
+            }
+
+            // Movemos la pista
+            // Cada movimiento es 100% / 3 = 33.333%
+            const percentage = index * (100 / slidesPerView);
+            track.style.transform = `translateX(-${percentage}%)`;
+        }
+
+        // Cambia cada 3 segundos
+        setInterval(nextSlide, 3000);
+    </script>
+</body>
+</html>
