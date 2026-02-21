@@ -47,11 +47,11 @@
         </ul>
     </aside>
 
-    <header>
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
-            <h2 style="color: var(--primary-accent); margin: 0;">Research & Development</h2>
+    <header class="logo-background">
+        <div class="container header-content">
+            <h2 style="color: #ffffff; margin: 0;">Research & Development</h2>
             <div class="social-links">
-                <a href="#" style="color: var(--text-dark);"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" style="color: #ffffff;"><i class="fab fa-github fa-lg"></i></a>
             </div>
         </div>
     </header>
@@ -59,33 +59,32 @@
     <main class="container">
         
         <section id="swarm" class="content-box">
-            <h3 class="section-title"><i class="fas fa-cubes"></i> Swarm Robotic Manipulation</h3>
-            <p class="tagline" style="font-size: 1rem;">Decentralized Control for Construction-Oriented Tasks | <em>Thesis 2024</em></p>
+            <div class="section-title">
+                <h3><i class="fas fa-cubes"></i> Swarm Robotic Manipulation</h3>
+                <p>Decentralized Control for Construction-Oriented Tasks | <em>Thesis 2024</em></p>
+            </div>
             
-            <div class="project-detail-grid">
+            <div class="project-content results-mode">
+                
                 <div class="project-text">
                     <p>
-                        This research addresses the challenge of <strong>collective transport and manipulation</strong> in unstructured environments. 
-                        I developed a decentralized control architecture using Robot Operaing System (ROS) and Gazebo Simulator.
-                        The agents were given the task to 
+                        This thesis focused on designing a <strong>manipulation module</strong> for a local designed differential robot, enabling them to pick up objects from the environment. Leveraging this mechanism, we developed a <strong>decentralized swarm strategy</strong> for gathering and transporting chips, achieving faster grouping efficiency without central control.
                     </p>
                     <ul class="custom-list">
                         <li><i class="fas fa-code-branch list-icon"></i> <strong>Stack: </strong> ROS (Noetic), Python, C++.</li>
-                        <li><i class="fas fa-robot list-icon"></i> <strong>Simulation: </strong> ARGoS (Large scale) & Gazebo Classic (Physics).</li>
-                        <li><i class="fas fa-check-circle list-icon"></i> <strong>Result: </strong> Validated scalability with up to 12 agents in simulation and an implemented physical unit.</li>
+                        <li><i class="fas fa-robot list-icon"></i> <strong>Simulation: </strong> ARGoS & Gazebo.</li>
+                        <li><i class="fas fa-check-circle list-icon"></i> <strong>Result: </strong> Validated with 12 agents.</li>
                     </ul>
                 </div>
                 
-                <div class="media-wrapper">
+                <div class="project-media">
                     <video controls class="styled-video" poster="assets/img/Qupa_sim.png">
                         <source src="assets/videos/qupa_collective.mp4" type="video/mp4">
                         Tu navegador no soporta videos.
                     </video>
-                    <p class="caption">Demo: Decentralized Collective Transport</p>
                 </div>
             </div>
-        </section>
-        <section id="thesis_photos" class="content-box">
+
             <div class="slider-viewport">
                 <div class="slider-track" id="track">
                     
@@ -94,129 +93,279 @@
                         <div class="slide-caption">Diseño Mecánico</div>
                     </div>
                     <div class="slide">
-                        <img src="assets/img/Modelo_final.jpg" alt="Robot Design">
+                        <img src="assets/img/Modelo_final.jpg" alt="Final Model">
                         <div class="slide-caption">Implementación</div>
                     </div>
-
                     <div class="slide">
                         <img src="assets/img/Qupa_sim.png" alt="Simulation">
                         <div class="slide-caption">Simulación</div>
                     </div>
-
                     <div class="slide">
-                        <img src="assets/img/qupa_leds.jpg" alt="Real World">
+                        <img src="assets/img/qupa_leds.jpg" alt="LED Test">
                         <div class="slide-caption">Prueba LED</div>
                     </div>
-
                     <div class="slide">
-                        <img src="assets/img/bloobs_leds.png" alt="Real World">
+                        <img src="assets/img/bloobs_leds.png" alt="ARGoS">
                         <div class="slide-caption">Pruebas ARGoS</div>
                     </div>
-
                     <div class="slide">
-                        <img src="assets/img/Real vs Sim.png" alt="Real World">
-                        <div class="slide-caption">Diferencias fisicas</div>
+                        <img src="assets/img/Real vs Sim.png" alt="Comparison">
+                        <div class="slide-caption">Sim vs Real</div>
                     </div>
-
                     <div class="slide">
-                        <img src="assets/img/Test_real.jpg" alt="Real World">
+                        <img src="assets/img/Test_real.jpg" alt="Physical Test">
                         <div class="slide-caption">Pruebas Físicas</div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
+        <section id="Autonomous Navigation" class="content-box">
+            <div class="section-title">
+                <h3><i class="fas fa-cubes"></i> Autonomous Navigation</h3>
+                <p>Intership at Robotics and Intelligent Systems Engineer Lab | <em> 2024 (RISE) - Remote</em></p>
+            </div>
+            
+            <div class="project-content results-mode">
+                
+                <div class="project-text">
+                    <p>
+                        Engineered a <strong>comprehensive simulation pipeline</strong> using ROS 2 and Gazebo to validate navigation in unstructured environments with <strong>dynamic human actors</strong>. The system integrates <strong>SLAM</strong> and <strong>AMCL</strong> for localization, while benchmarking local controllers like <strong>MPC</strong> and <strong>DWA</strong> to optimize dynamic obstacle avoidance and path planning.
+                    </p>
+                    <ul class="custom-list">
+                        <li><i class="fas fa-code-branch list-icon"></i> <strong>Stack: </strong> ROS (Noetic), ROS2 (Humble), Python, C++.</li>
+                        <li><i class="fas fa-robot list-icon"></i> <strong>Simulation: </strong> Gazebo Classic and Fortress.</li>
+                        <li><i class="fas fa-check-circle list-icon"></i> <strong>Controllers: </strong> DWA, MPC, MPPI, RL variants</li>
+                    </ul>
+                </div>
+                
+                <div class="project-media">
+                    <video controls class="styled-video" poster="assets/img/navigation/nav2.png">
+                        <source src="assets/videos/navigation.mp4" type="video/mp4">
+                        Tu navegador no soporta videos.
+                    </video>
+                </div>
+            </div>
+
+            <div class="slider-viewport">
+                <div class="slider-track" id="track_nav">
+                    
                     <div class="slide">
-                        <img src="assets/img/Espejo.png" alt="Real World">
-                        <div class="slide-caption">Pruebas Espejo Hiperbolico</div>
+                        <img src="assets/img/navigation/scenario1.png" alt="Robot Design">
+                        <div class="slide-caption">Sim environment</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/img/navigation/scenario2.png" alt="Final Model">
+                        <div class="slide-caption">Sim environment</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/img/navigation/scenario3.png" alt="Simulation">
+                        <div class="slide-caption">Sim environment</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/img/navigation/scenario4.png" alt="LED Test">
+                        <div class="slide-caption">Sim environment</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/img/navigation/scenario5.png" alt="ARGoS">
+                        <div class="slide-caption">Sim environment</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/img/navigation/nav2.png" alt="Comparison">
+                        <div class="slide-caption">Navigation</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/img/navigation/mapping.png" alt="Physical Test">
+                        <div class="slide-caption">Mapping</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/img/navigation/map.png" alt="Physical Test">
+                        <div class="slide-caption">Map</div>
+                    </div>
+                    <div class="slide">
+                        <img src="assets/img/navigation/map2.png" alt="Physical Test">
+                        <div class="slide-caption">Map</div>
                     </div>
 
                 </div>
             </div>
-            <!-- <div class="architecture-section" style="margin-top: 30px; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px;">
-                <h4 style="color: var(--primary-accent);">System Architecture</h4>
-                <p>Decentralized state machine implemented in each agent using ROS 2 Humble.</p>
-                <img src="assets/ros_graph_architecture.png" alt="ROS Graph" style="width: 100%; border-radius: 4px; margin-top: 10px;">
-            </div> -->
         </section>
 
-        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
 
-        <section id="navigation" class="content-box">
-            <h3 class="section-title"><i class="fas fa-route"></i> Autonomous Navigation & Racing</h3>
-            <p class="tagline" style="font-size: 1rem;">High-Speed Navigation & Obstacle Avoidance | <em>Roboracer Ecuador Champion</em></p>
-            
-            <div class="project-detail-grid">
-                <div class="project-media">
-                    <div class="video-placeholder">
-                        <i class="fas fa-car-side" style="font-size: 40px; color: #555;"></i>
-                        <p>Race Highlights</p>
-                        </div>
-                </div>
-
-                <div class="project-text">
-                    <p>
-                        Leading the <strong>AIROS</strong> team, we developed a high-speed navigation stack capable of dynamic obstacle avoidance. 
-                        Additionally, in collaboration with <strong>SKKU (South Korea)</strong>, I benchmarked perception pipelines using LiDAR and Depth Cameras.
-                    </p>
-                    <ul class="custom-list">
-                        <li><i class="fas fa-layer-group list-icon"></i> <strong>Tech:</strong> Nav2, Slam_toolbox, Adaptive Monte Carlo Localization (AMCL).</li>
-                        <li><i class="fas fa-microchip list-icon"></i> <strong>Hardware:</strong> NVIDIA Jetson Nano, LiDAR RPLidar A1.</li>
-                        <li><i class="fas fa-trophy list-icon"></i> <strong>Achievement:</strong> 1st Place at Roboracer Ecuador 2024.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        
 
         <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
 
         <section id="prototyping" class="content-box">
-            <h3 class="section-title"><i class="fas fa-hand-holding-medical"></i> Assistive Technology</h3>
-            <p class="tagline">Industrial Prosthetic Prototype | <em>Bio-Mechatronics</em></p>
+            <div class="section-title">
+                <h3><i class="fas fa-print"></i> 3D Printing & Prototyping</h3>
+                <p>Industrial Prosthetic Prototype | <em>Bio-Mechatronics</em></p>
+            </div>
             
-            <div class="project-detail-grid">
+            <div class="project-content results-mode">
                 <div class="project-text">
-                    <p>Design and fabrication of a low-cost industrial prosthesis focused on functionality and accessibility.</p>
+                    <p>Design and fabrication of a low-cost industrial prosthesis focused on functionality and accessibility. The prototyping process involved multiple iterations using FDM 3D printing technologies to optimize mechanical strength and weight.</p>
                     <ul class="custom-list">
                         <li><i class="fas fa-drafting-compass list-icon"></i> <strong>CAD/CAM:</strong> Designed in Fusion 360 optimized for 3D printing.</li>
-                        <li><i class="fas fa-microchip list-icon"></i> <strong>Control:</strong> EMG signal processing for intuitive user control.</li>
+                        <li><i class="fas fa-layer-group list-icon"></i> <strong>Materials:</strong> PLA+ and PETG for structural integrity.</li>
                     </ul>
                 </div>
+                
                 <div class="project-media">
-                    </div>
+                    <!-- FOTO PRINCIPAL (Reemplaza al video) -->
+                    <img src="assets/img/3D/Protesis.png" alt="Prosthesis Prototype" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+
+            <div class="slider-viewport">
+                <div class="slider-track" id="track_3d">
+                    <div class="slide"><img src="assets/img/3D/slicing.png" alt="3D Print"><div class="slide-caption">Slicing</div></div>
+                    <div class="slide"><img src="assets/img/3D/slicing2.png" alt="3D Print"><div class="slide-caption">Slicing</div></div>
+                    <div class="slide"><img src="assets/img/3D/impresion.png" alt="3D Print"><div class="slide-caption">Printing</div></div>
+                    <div class="slide"><img src="assets/img/3D/impresion_3.png" alt="Assembly"><div class="slide-caption">Printing</div></div>
+                    <div class="slide"><img src="assets/img/3D/impresion_2.png" alt="Testing"><div class="slide-caption">Pieces</div></div>
+                    <div class="slide"><img src="assets/img/3D/impresion_4.png" alt="Final Model"><div class="slide-caption">Pieces</div></div>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer>
-        <p>© 2024 David Torres | <a href="index.html" style="color: var(--primary-accent);">Back to Home</a></p>
+    <footer class="main-footer">
+        <div class="container footer-content">
+            
+            <div class="footer-brand">
+                <h3>David Torres</h3>
+                <p>Mechatronics Engineer | Researcher</p>
+                <p class="footer-location"><i class="fas fa-map-marker-alt"></i> Guayaquil, Ecuador</p>
+            </div>
+
+            <div class="footer-social">
+                <a href="https://linkedin.com/in/davatorr" target="_blank" class="social-icon" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/davatorr1009" target="_blank" class="social-icon" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:davatorr@espol.edu.ec" target="_blank" class="social-icon" title="Email Me">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 David Torres. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
         const track = document.getElementById('track');
-        // Obtenemos todos los slides
-        const slides = document.querySelectorAll('.slide');
+        // Obtenemos todos los slides reales
+        const slides = track.querySelectorAll('.slide');
         
         let index = 0;
-        // Configuración: Cuántas fotos se ven a la vez
-        const slidesPerView = 3; 
-        // Límite: Total de fotos menos las que ya se ven
-        const maxIndex = slides.length - slidesPerView; 
 
         function nextSlide() {
+            // DETECTAR: ¿Es móvil o PC?
+            // Si ancho < 768px, mostramos 1 foto. Si no, mostramos 3.
+            const slidesPerView = window.innerWidth < 768 ? 1 : 3;
+            
+            // Calculamos el índice máximo para no pasarnos a blanco
+            const maxIndex = slides.length - slidesPerView; 
+
             index++;
             
-            // Si llegamos al final, volvemos al principio suavemente
+            // Si llegamos al final, volver al inicio
             if (index > maxIndex) {
                 index = 0;
             }
 
-            // Movemos la pista
-            // Cada movimiento es 100% / 3 = 33.333%
+            // EL CÁLCULO MÁGICO:
+            // En Móvil: index * 100% (Mueve 1 foto entera)
+            // En PC: index * 33.33% (Mueve 1/3 de foto)
             const percentage = index * (100 / slidesPerView);
+            
             track.style.transform = `translateX(-${percentage}%)`;
         }
 
-        // Cambia cada 3 segundos
+        // Reiniciar al cambiar tamaño de ventana para evitar errores de cálculo
+        window.addEventListener('resize', () => {
+            index = 0;
+            track.style.transform = 'translateX(0)';
+        });
+
+        // Mover cada 3 segundos
         setInterval(nextSlide, 3000);
+    </script>
+    <script>
+        const track_nav = document.getElementById('track_nav');
+        // Obtenemos todos los slides reales
+        const slides_nav = track_nav.querySelectorAll('.slide');
+        
+        let index_nav = 0;
+
+        function nextSlideNav() {
+            // DETECTAR: ¿Es móvil o PC?
+            // Si ancho < 768px, mostramos 1 foto. Si no, mostramos 3.
+            const slidesPerView = window.innerWidth < 768 ? 1 : 3;
+            
+            // Calculamos el índice máximo para no pasarnos a blanco
+            const maxIndex_nav = slides_nav.length - slidesPerView; 
+
+            index_nav++;
+            
+            // Si llegamos al final, volver al inicio
+            if (index_nav > maxIndex_nav) {
+                index_nav = 0;
+            }
+
+            // EL CÁLCULO MÁGICO:
+            // En Móvil: index * 100% (Mueve 1 foto entera)
+            // En PC: index * 33.33% (Mueve 1/3 de foto)
+            const percentage_nav = index_nav * (100 / slidesPerView);
+            
+            track_nav.style.transform = `translateX(-${percentage_nav}%)`;
+        }
+
+        // Reiniciar al cambiar tamaño de ventana para evitar errores de cálculo
+        window.addEventListener('resize', () => {
+            index_nav = 0;
+            track_nav.style.transform = 'translateX(0)';
+        });
+
+        // Mover cada 3 segundos
+        setInterval(nextSlideNav, 3000);
+    </script>
+    <script>
+        const track_3d = document.getElementById('track_3d');
+        // Obtenemos todos los slides reales
+        const slides_3d = track_3d.querySelectorAll('.slide');
+        
+        let index_3d = 0;
+
+        function nextSlide3D() {
+            // DETECTAR: ¿Es móvil o PC?
+            const slidesPerView = window.innerWidth < 768 ? 1 : 3;
+            const maxIndex_3d = slides_3d.length - slidesPerView; 
+
+            index_3d++;
+            
+            if (index_3d > maxIndex_3d) {
+                index_3d = 0;
+            }
+
+            const percentage_3d = index_3d * (100 / slidesPerView);
+            track_3d.style.transform = `translateX(-${percentage_3d}%)`;
+        }
+
+        window.addEventListener('resize', () => {
+            index_3d = 0;
+            track_3d.style.transform = 'translateX(0)';
+        });
+
+        setInterval(nextSlide3D, 3000);
     </script>
 </body>
 </html>

@@ -1,4 +1,6 @@
-/* 1. RESET Y CONFIGURACIÓN BASE */
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN (TEMA CLARO)
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +8,19 @@
 }
 
 :root {
-    --primary-bg: #0a0a0a;
-    --secondary-bg: #1a1a1a;
-    --primary-accent: #0073e6;
-    --text-light: #f4f7f6;
-    --text-dark: #cccccc;
-    --border-color: #333333;
-    --white: #ffffff;
+    /* PALETA PROFESIONAL (Light Mode) */
+    --primary-bg: #f4f6f8;       
+    --secondary-bg: #ffffff;     
+    --primary-accent: #003366;   
+    --text-light: #2c3e50;       
+    --text-dark: #555555;        
+    --border-color: #d1d5db;     
+}
+
+/* Regla base: imágenes nunca exceden su contenedor */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 body {
@@ -21,535 +29,689 @@ body {
     color: var(--text-light);
     background-color: var(--primary-bg);
     
-    /* CAMBIO IMPORTANTE: */
-    display: flex;             /* Cambiamos de Grid a Flex vertical simple */
+    display: flex;
     flex-direction: column;
-    padding-left: 70px;        /* Dejamos el hueco exacto para el menú cerrado */
+    padding-left: 70px;          /* Espacio para menú lateral en PC */
     min-height: 100vh;
-    position: relative;
+    overflow-x: hidden;          /* IMPORTANTE: Evita que la pantalla se ensanche en móvil */
 }
 
-/* 2. LAYOUT */
+/* Texto justificado para párrafos y listas */
+p, li {
+    text-align: justify;
+}
+
+/* =========================================
+   2. ESTRUCTURA Y BARRA LATERAL (PC)
+   ========================================= */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
 }
 
-header {
-    grid-area: header;
-    background-color: var(--secondary-bg);
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
+/* --- BARRA LATERAL MÁS FINA --- */
 .sidebar {
-    position: fixed;     /* Se queda pegada a la pantalla */
-    top: 0;              /* Toca el techo (elimina hueco superior) */
-    left: 0;             /* Toca la izquierda */
-    height: 100vh;       /* Ocupa toda la altura */
-    width: 70px;         /* Ancho inicial cerrado */
-    
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 60px;
     background-color: var(--secondary-bg);
     border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
+    align-items: flex-start; /* Alineado a la izquierda para mejor control */
     padding-top: 20px;
-    
-    /* Animación de expansión */
-    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 100;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave */
     overflow: hidden;
-    z-index: 1000;       /* Asegura que flote POR ENCIMA de todo lo demás */
 }
 
-/* El hover se mantiene igual, pero ahora flotará sobre el contenido */
 .sidebar:hover {
-    width: 260px;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.5); /* Sombra para que se note que flota */
+    width: 280px; /* Aumentado para que textos largos no se corten */
 }
 
-/* Ajuste de las Listas */
+/* Contenedor de listas para asegurar ancho completo */
 .sidebar ul {
     list-style: none;
+    width: 100%;
     margin-bottom: 10px;
-    padding: 0;
-    width: 260px; /* Mantiene el ancho interno fijo para que el texto no baile */
 }
 
-/* Títulos de sección (Research, Industry...) */
-.sidebar ul li p strong {
-    display: block;
-    margin-left: 20px;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 0.75rem;
+/* Títulos de secciones (ej: Professional, Leadership) */
+.sidebar p {
+    padding: 10px 20px 5px 20px; /* Menos espacio abajo */
+    font-size: 0.7rem;           /* Texto MÁS PEQUEÑO y discreto */
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-dark);
-    opacity: 0; /* Oculto por defecto */
-    transition: opacity 0.2s ease;
+    letter-spacing: 1px;         /* Espaciado para elegancia */
+    color: #999;                 /* Gris muy suave */
     white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
 }
 
-/* Mostrar títulos al expandir */
-.sidebar:hover ul li p strong {
+.sidebar:hover p {
     opacity: 1;
-    transition-delay: 0.1s; /* Aparece un poquito después de expandirse */
 }
 
-/* Enlaces (Icono + Texto) */
-.sidebar ul li a {
+/* Enlaces del menú */
+.sidebar a {
     display: flex;
     align-items: center;
-    height: 50px; /* Altura fija para centrar icono */
-    padding: 0 22px; /* Alineación del icono */
-    color: var(--text-light);
+    height: 45px;                /* Altura reducida (antes 50px) */
+    padding: 0 18px;
+    color: var(--text-dark);
     text-decoration: none;
-    transition: background-color 0.2s;
-    white-space: nowrap; /* Evita que el texto baje de línea */
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+    font-size: 0.9rem;           /* FUENTE REDUCIDA para que no se vea gigante */
 }
 
-.sidebar ul li a:hover, 
-.sidebar ul li a.active {
-    background-color: var(--primary-accent);
-    color: white;
+.sidebar a:hover {
+    background-color: rgba(0, 51, 102, 0.08);
+    color: var(--primary-accent);
 }
 
-/* Iconos (Siempre visibles y centrados) */
-.sidebar ul li a i {
-    min-width: 25px; /* Espacio fijo para el icono */
-    font-size: 1.2rem;
+.sidebar i {
+    font-size: 1.1rem;           /* Iconos ligeramente más pequeños */
+    min-width: 24px;
     text-align: center;
-    margin-right: 15px; /* Separación con el texto */
+    margin-right: 15px;          /* Separación con el texto */
 }
 
-/* Texto de navegación */
 .nav-text {
-    opacity: 0; /* Invisible por defecto */
-    transform: translateX(-10px); /* Efecto de entrada */
-    transition: all 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-weight: 500;            /* Un poco más fino */
 }
 
 .sidebar:hover .nav-text {
     opacity: 1;
-    transform: translateX(0);
 }
 
-/* Ocultar submenús en modo colapsado para limpieza */
-.sub-menu {
-    display: none; 
-    padding-left: 50px !important;
-    background: rgba(0,0,0,0.2);
+/* =========================================
+   3. CONTENIDO Y TARJETAS
+   ========================================= */
+h1, h2, h3 { color: var(--primary-accent); }
+
+.section-title {
+    border-bottom: 2px solid var(--primary-accent);
+    padding-bottom: 10px;
+    margin: 40px 0 20px 0;
+    display: inline-block;
 }
 
-.sidebar:hover .sub-menu {
-    display: block; /* Solo aparecen si abres la barra */
+/* Tarjetas */
+.news-item, .project-content {
+    background: var(--secondary-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    border: 1px solid var(--border-color);
 }
 
-main {
-    grid-area: main;
-    overflow-y: auto; /* Para permitir scroll en el contenido principal */
-    padding: 2rem 0;
+.news-item.highlight {
+    border-left: 4px solid var(--primary-accent);
+    background-color: #fcfdfe;
+}
+.header-content .social-links {
+        display: none;
+    }
+/* Grid de Proyectos (PC) */
+.project-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    align-items: center; /* Centrado vertical */
 }
 
-footer {
-    grid-area: footer;
-    text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid var(--border-color);
-    background-color: var(--secondary-bg);
+/* Listas personalizadas con iconos */
+.custom-list {
+    list-style: none;      /* Quitamos viñetas por defecto */
+    margin-top: 15px;      /* Espacio con respecto al párrafo anterior */
+    padding-left: 25px;    /* Sangría para alinear mejor */
 }
 
-
-/* 3. SIDEBAR DE NAVEGACIÓN */
-.sidebar h2 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: var(--primary-accent);
+.custom-list li {
+    margin-bottom: 8px;    /* Espacio entre cada elemento de la lista */
 }
 
-.sidebar ul {
-    list-style: none;
-    margin-bottom: 1.5rem;
+/* =========================================
+   4. CONTROL DE IMÁGENES (PC y GENERAL)
+   ========================================= */
+
+/* Contenedor de la imagen/video */
+.project-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-.sidebar ul li {
-    margin-bottom: 0.5rem;
+/* IMÁGENES EN PC: TAMAÑO CONTROLADO */
+.project-media img, .video-placeholder {
+    width: 100%;
+    
+    /* ¡AQUÍ ESTÁ LA MAGIA PARA PC! */
+    max-width: 450px;       /* Nunca serán más anchas que esto en PC */
+    max-height: 300px;      /* Altura máxima para que no sean eternas */
+    
+    object-fit: cover;      /* Recorta si es necesario para llenar */
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
 
-.sidebar ul li a {
-    color: var(--text-light);
-    text-decoration: none;
-    display: block;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+/* =========================================
+   3.1. PERFIL / INTRO (INDEX)
+   ========================================= */
+.profile-wrapper {
+    display: flex;
+    align-items: center;   /* Centrado vertical respecto al texto */
+    gap: 50px;             /* Separación entre foto y texto */
+    margin: 40px 0;
 }
 
-.sidebar ul li a:hover {
-    background-color: var(--primary-accent);
-    color: var(--white);
+.profile-image {
+    flex: 0 0 320px;       /* Ancho fijo de la foto en PC */
 }
 
-.sidebar ul li a i {
-    margin-right: 10px;
-    width: 20px; /* Ancho fijo para alineación */
-    text-align: center;
+.profile-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;   /* Bordes redondeados modernos */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    object-fit: cover;
 }
 
-/* Subsecciones */
-.sidebar .sub-menu {
-    list-style: none;
-    padding-left: 20px; /* Indentación */
-    margin-top: 0.5rem;
+/* Carrusel */
+.carousel-container {
+    width: 100%;
+    max-width: 800px; /* Limitamos el ancho total del carrusel */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.slide img {
+    border-radius: 6px;
+    height: 200px; /* Altura fija uniforme */
+    object-fit: cover;
 }
 
-.sidebar .sub-menu li a {
-    font-size: 0.9em;
-    padding: 8px 15px;
-    color: var(--text-dark);
+/* =========================================
+   4.1. LOGOS Y TECH STACK
+   ========================================= */
+.logo-background {
+    background-color: #0d2b36; /* Azul petróleo oscuro (toque verdoso) */
+    width: calc(100% + 70px);  /* Extender ancho para cubrir el hueco de la sidebar */
+    margin-left: -70px;        /* Mover a la izquierda para tocar el borde */
+    padding-left: 70px;        /* Realinear el contenido interno con el resto de la página */
+    margin-bottom: 20px;
 }
 
-/* 4. TOPBAR (HEADER) Y LOGOS */
+.header-content {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding-top: 20px; 
+    padding-bottom: 20px;
+}
+
 .tech-stack {
-    padding: 1rem 0;
-}
-
-.tech-stack h3 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    color: var(--primary-accent);
+    padding: 30px 0; /* Más espacio vertical para que respire */
+    margin-top: 0;   /* Eliminamos margen superior */
 }
 
 .logo-grid {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;           /* Permite que bajen si no hay espacio */
+    justify-content: center;   /* Centrados horizontalmente */
+    align-items: center;       /* Centrados verticalmente */
+    gap: 40px;                 /* Espacio generoso entre logos */
 }
 
 .logo-item {
+    width: 80px;               /* Ancho fijo para uniformidad */
+    height: 60px;              /* Alto fijo */
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-dark);
-    transition: color 0.3s ease;
-}
-.logo-item:hover {
-    color: var(--primary-accent);
-}
-.logo-item img {
-    width: 80px; /* Ajusta según el tamaño de tus logos */
-    height: 50px;
-    object-fit: contain;
-}
-
-/* 5. SECCIÓN DE PERFIL */
-.profile-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-
-.photo {
-    width: 280px;
-    height: auto;
-    border-radius: 8px;
-    border-bottom: 6px solid var(--primary-accent);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.profile-content h1 {
-    color: var(--primary-accent);
-}
-
-.tagline {
-    font-size: 1.2rem;
-    color: var(--text-light);
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-.about-me p {
-    margin-bottom: 1.5rem; 
-}
-
-.section-title {
-    font-size: 1.5rem;
-    color: var(--primary-accent);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--border-color);
-    display: inline-block;
-}
-
-/* 6. OTROS */
-.linkedin-link {
-    color: #0077b5;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 6px 12px;
-    border: 1px solid #0077b5;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.linkedin-link:hover {
-    background-color: #0077b5;
-    color: white;
-}
-
-.download-btn {
-    background-color: transparent;
-    color: var(--primary-accent);
-    padding: 8px 16px;
-    text-decoration: none;
-    border: 1px solid var(--primary-accent);
-    border-radius: 4px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-}
-
-.download-btn:hover {
-    background-color: var(--primary-accent);
-    color: white;
-}
-
-/* --- SECCIÓN DE NOTICIAS (News) - UNIFORME --- */
-.news-section {
-    margin: 40px 0;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.03); 
-    border-left: 4px solid var(--primary-accent);
-    border-radius: 4px;
-}
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.news-item {
-    background: var(--secondary-bg);
-    padding: 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    color: var(--text-light);
-    transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.news-item:hover {
-    border-color: var(--primary-accent); /* Al pasar el mouse, se ilumina en azul como las otras */
-    transform: translateY(-2px);
-}
-
-.news-date {
-    display: inline-block;
-    background-color: var(--primary-accent);
-    color: white;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-/* --- MEJORA VISUAL DE LISTAS (Research) - DARK MODE --- */
-.content-box {
-    margin-top: 40px;
-    padding: 20px 0;
-}
-
-.custom-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.custom-list li {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: var(--text-dark); /* Color gris suave para lectura cómoda */
-}
-
-/* Iconos de la lista */
-.list-icon {
-    color: var(--primary-accent); /* Azul brillante */
-    font-size: 1.2rem;
-    margin-right: 15px;
-    margin-top: 5px;
-    min-width: 25px;
-}
-
-/* --- BOTÓN CV --- */
-.cv-wrapper {
-    margin-top: 40px;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-    padding-top: 20px;
-}
-
-/* --- ESTILOS ESPECÍFICOS DE RESEARCH --- */
-
-.project-detail-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-    gap: 40px;
-    margin-top: 20px;
-    align-items: center; /* Centrar verticalmente */
-}
-
-/* Para pantallas pequeñas (móviles), que se ponga uno debajo del otro */
-@media (max-width: 768px) {
-    .project-detail-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.video-placeholder {
-    background-color: #000;
-    border: 2px dashed var(--border-color);
-    border-radius: 8px;
-    height: 250px; /* Altura fija para el placeholder */
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--text-dark);
-    transition: border-color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.video-placeholder:hover {
-    border-color: var(--primary-accent);
+.logo-item:hover {
+    transform: scale(1.1);     /* Efecto zoom sutil */
 }
 
-.video-placeholder img, 
-.video-placeholder video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 6px;
+.logo-item img, .logo-item i {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;       /* Ajuste perfecto sin deformar */
+    filter: grayscale(100%) brightness(200%); /* Más brillo para fondo oscuro */
+    opacity: 0.8;              /* Más opacidad para visibilidad */
+    transition: all 0.3s ease;
+    font-size: 2.5rem;         /* Tamaño base para iconos (<i>) */
+    color: #e0e0e0;            /* Iconos casi blancos */
 }
 
-.project-video {
-    width: 100%;
-    height: auto;
+.logo-item:hover img {
+    filter: grayscale(0%) brightness(100%); /* Color y brillo original al hover */
+    opacity: 1;
+}
+
+.logo-item:hover i {
+    color: var(--primary-accent);
+    opacity: 1;
+}
+
+/* =========================================
+   4.2. GRID DE DETALLES Y VIDEO
+   ========================================= */
+.project-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 30px;
+
+    /* Estilo de tarjeta (Card Style) */
+    background: var(--secondary-bg);
+    padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
 }
-.video-caption {
-    font-size: 0.9rem;
-    color: var(--text-dark);
-    text-align: center;
-    font-style: italic;
+
+.styled-video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: block;
 }
 
 .media-wrapper {
     width: 100%;
-    max-width: 500px; /* Aquí controlas el ANCHO MÁXIMO. Ajústalo a tu gusto */
-    margin: 0 auto;   /* Esto lo centra si el espacio es más grande */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.styled-video {
-    width: 100%;      /* Ocupa el 100% del wrapper, no de la pantalla */
-    height: auto;     /* Mantiene la proporción correcta */
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    display: block;
-}
+/* =========================================
+   ESTILOS ESPECÍFICOS DEL CARRUSEL (SLIDER)
+   ========================================= */
 
-.caption {
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-dark);
-    margin-top: 5px;
-}
-
-/* Ventana de visualización */
+/* 1. El Marco (Viewport) */
 .slider-viewport {
     width: 100%;
-    /* Quitamos el max-width de 500px para que ocupe más espacio y quepan las 3 fotos */
-    height: 200px; /* Un poco más bajo ya que las fotos serán más pequeñas */
-    overflow: hidden;
+    overflow: hidden; /* Oculta lo que se sale por los lados */
+    margin-top: 20px;
+    position: relative;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    position: relative;
-    background: #000;
-    margin-top: 10px;
 }
 
-/* La pista larga */
+/* 2. La Pista (Track) que se mueve */
 .slider-track {
-    display: flex;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* CADA DIAPOSITIVA */
-.slide {
-    /* AQUÍ ESTÁ EL TRUCO: 100% / 3 = 33.333% */
-    min-width: 33.333%; 
-    height: 100%;
-    position: relative;
-    padding: 0 2px; /* Un pequeño espacio entre fotos */
-    box-sizing: border-box; /* Para que el padding no rompa el ancho */
-}
-
-.slide img {
+    display: flex; /* Pone las fotos en fila horizontal */
+    transition: transform 0.5s ease-in-out; /* Movimiento suave */
     width: 100%;
-    height: 100%;
-    object-fit: scale-down;
-    /* Opcional: filtro para oscurecer un poco las que no son centrales */
-    filter: brightness(0.9); 
-    transition: filter 0.8s;
 }
 
-.slide:hover img {
-    filter: brightness(1.1); /* Brilla al pasar el mouse */
+/* 3. Cada diapositiva (Slide) */
+.slide {
+    /* POR DEFECTO (PC): Ocupa 1/3 del ancho (33.33%) */
+    min-width: 33.333%; 
+    box-sizing: border-box;
+    padding: 0 5px; /* Espacio entre fotos */
+    position: relative;
 }
 
+/* 4. IMÁGENES DENTRO DEL CARRUSEL (Override) */
+/* ¡IMPORTANTE! Esto sobreescribe la regla de "imagen pequeña" anterior */
+.slide img {
+    width: 100% !important;      /* Forza a llenar su hueco */
+    max-width: none !important;  /* Quita el límite de 450px */
+    height: 200px !important;    /* Altura fija uniforme */
+    object-fit: cover;           /* Recorta sin deformar */
+    border-radius: 6px;
+    display: block;
+    box-shadow: none;
+}
+
+/* 5. Texto sobre la imagen */
 .slide-caption {
     position: absolute;
     bottom: 5px;
     left: 5px;
     right: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 0.8rem;
     padding: 5px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
     text-align: center;
-    font-size: 0.75rem; /* Texto más pequeño para que quepa */
-    border-radius: 4px;
-}
-/* Esto separa automáticamente la etiqueta del valor */
-/* Ejemplo: "Simulation:" tendrá 8px de aire a la derecha antes de "ARGoS" */
-strong, b {
-    margin-right: 8px; 
-    color: var(--primary-accent); /* Opcional: Dale color al título para diferenciarlo más */
+    border-radius: 0 0 6px 6px;
 }
 
-/* Darle más aire a cada línea de las listas */
-.custom-list li {
-    margin-bottom: 15px; /* Más espacio vertical entre ítems */
-    padding-left: 5px;
+/* =========================================
+   AJUSTE PARA MÓVIL (1 FOTO A LA VEZ)
+   ========================================= */
+@media (max-width: 768px) {
+    .slide {
+        /* EN MÓVIL: Ocupa el 100% del ancho */
+        min-width: 100%; 
+    }
 }
-.custom-icon {
-    width: 24px;        /* Tamaño estándar de icono */
-    height: 24px;
-    object-fit: contain;
-    vertical-align: middle; /* Alinea el icono con la mitad del texto */
-    margin-right: 12px;     /* Espacio entre icono y texto */
-    filter: invert(1);      /* TRUCO: Si descargas iconos negros, esto los vuelve blancos para tu fondo oscuro */
-    /* Si tus iconos ya son de color o blancos, borra la línea de filter */
+/* =========================================
+   5. DISEÑO RESPONSIVO (MÓVIL / CELULAR)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* --- BODY Y LAYOUT --- */
+    body {
+        padding-left: 0;
+        padding-bottom: 70px;
+    }
+
+    .container {
+        padding: 0 25px; /* Un poco más de margen lateral para que el texto respire */
+    }
+
+    /* --- CONTROL DE IMÁGENES MÓVIL (MÁS PEQUEÑAS) --- */
+    .project-content, .hero-content {
+        display: flex;
+        flex-direction: column-reverse; /* Imagen arriba */
+        gap: 15px;
+    }
+
+    /* Reducimos el tamaño en móvil específicamente */
+    .project-media img, .video-placeholder, .styled-video {
+        max-width: 280px;   /* ¡AQUÍ! En móvil máximo miden 280px */
+        max-height: 200px;  /* Altura controlada */
+        margin: 0 auto;     /* Centradas */
+        object-fit: cover;  /* Asegura que rellene el cuadro sin deformarse */
+    }
+
+    /* Foto de perfil móvil */
+    .hero-image img {
+        width: 140px;       /* Más pequeña y delicada */
+        height: 140px;
+        margin: 0 auto 15px auto;
+        display: block;
+    }
+
+    /* --- TARJETA "ABOUT ME" --- */
+    .about-me {
+        background-color: var(--secondary-bg); /* Fondo blanco */
+        padding: 25px;                         /* Espacio interno cómodo */
+        border-radius: 8px;                    /* Bordes redondeados */
+        border: 1px solid var(--border-color); /* Borde gris suave */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);/* Sombra elegante */
+        
+        margin-top: 25px;                      /* Separación del nombre y tagline */
+        text-align: justify;                   /* Texto justificado para que se vea ordenado */
+    }
+
+    /* Opcional: Ajuste del título dentro de la tarjeta */
+    .about-me h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        border-bottom: 2px solid var(--primary-accent); /* Línea azul debajo del título */
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    /* --- MENÚ INFERIOR --- */
+    /* ... Dentro de @media (max-width: 768px) ... */
+
+    
+    /* 1. AJUSTES DEL CUERPO */
+    body {
+        padding-left: 0;
+        padding-bottom: 70px;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    /* 2. ELIMINAR LOS CONTENEDORES DE LISTA (UL) DEL FLUJO */
+    .sidebar {
+            width: 100% !important;    /* Forzamos ancho fijo */
+            height: 60px !important;
+            top: auto;
+            bottom: 0;
+            left: 0;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            
+            padding: 0;
+            margin: 0;
+            background-color: var(--secondary-bg);
+            border-top: 1px solid var(--border-color);
+            z-index: 9999;
+            
+            /* ¡LA SOLUCIÓN! Matamos cualquier animación de la versión PC */
+            transition: none !important; 
+            transform: none !important;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+
+    
+    /* Esto hace que los LI se comporten como hijos directos del sidebar */
+    .sidebar:hover, .sidebar:focus, .sidebar:active {
+        width: 100% !important;
+    }
+
+    /* 3. CONFIGURACIÓN DE CADA BOTÓN (LI) */
+    .sidebar li {
+        list-style: none;
+        width: 100%;       /* Ocupa todo el espacio disponible */
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 4. OCULTAR TEXTOS (LA CLAVE) */
+    /* Ocultamos "Home", "Research" (.nav-text) */
+    /* Ocultamos los títulos "Professional", "Leadership" (p) */
+    .nav-text, 
+    .sidebar li p, 
+    .sidebar strong {
+        display: none !important; /* ¡Desaparecen por completo! */
+    }
+
+    /* 5. CENTRAR EL ICONO */
+    .sidebar a {
+        display: flex;
+        justify-content: center; /* Centrado Horizontal perfecto */
+        align-items: center;     /* Centrado Vertical perfecto */
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar i {
+        font-size: 1.5rem;       /* Tamaño grande para el dedo */
+        margin: 0 !important;    /* Quitamos cualquier margen lateral */
+        line-height: 1;          /* Evita desplazamientos verticales fantasma */
+        color: var(--text-dark);
+    }
+
+    /* Efecto al tocar */
+    .sidebar a:active i {
+        color: var(--primary-accent);
+    }
+    /* --- TEXTOS MÓVIL --- */
+    h1 { font-size: 1.2rem; text-align: center; } /* Título principal más controlado */
+    h2 { font-size: 1rem; }    /* Título de barra superior ajustado */
+    h3 { font-size: 0.95rem; } /* Títulos de sección (About Me, etc.) más discretos */
+    p, li { 
+        font-size: 0.85rem;    /* Texto de lectura más fino y elegante */
+        text-align: justify;
+    }
+
+    .section-title {
+        margin: 25px 0 15px 0; /* Menos separación vertical entre secciones */
+    }
+
+    /* --- HEADER MÓVIL --- */
+    .header-content {
+        flex-direction: column; /* Apilar título e icono en móvil para que no ensanchen la pantalla */
+        gap: 10px;
+    }
+
+    /* Reset para móvil: aquí no hay hueco que cubrir */
+    .logo-background {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    /* --- LOGOS MÓVIL --- */
+    .logo-grid {
+        gap: 20px;             /* Menos espacio en móvil */
+    }
+    .logo-item {
+        width: 60px;           /* Logos más pequeños */
+        height: 40px;
+    }
+
+    /* --- PERFIL MÓVIL --- */
+    .profile-wrapper {
+        flex-direction: column; /* Columna: Foto arriba, texto abajo */
+        text-align: center;     /* Texto centrado */
+        gap: 20px;
+    }
+
+    .profile-image {
+        width: 200px;           /* Foto más pequeña */
+        margin: 0 auto;         /* Centrada horizontalmente */
+    }
+
+    /* --- GRID Y VIDEO MÓVIL --- */
+    .project-detail-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* --- CARRUSEL MÓVIL --- */
+    .slide {
+        min-width: 100%; /* Móvil: 1 imagen visible */
+    }
+}
+
+/* =========================================
+   FOOTER PROFESIONAL
+   ========================================= */
+
+.main-footer {
+    background-color: var(--primary-accent); /* Usamos tu azul corporativo */
+    color: #ffffff;
+    padding-top: 40px;
+    margin-top: 50px; /* Separación del contenido principal */
+    border-top: 4px solid rgba(0,0,0,0.1); /* Un borde sutil arriba */
+}
+
+/* Contenedor flexible para poner texto a la izq y redes a la der */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+/* Estilos de tu nombre y cargo */
+.footer-brand h3 {
+    color: #ffffff; /* Blanco puro */
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.8); /* Blanco con un poco de transparencia */
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: left; /* Aseguramos alineación izquierda */
+}
+
+.footer-location {
+    font-size: 0.85rem !important;
+    margin-top: 5px !important;
+    opacity: 0.7;
+}
+
+/* Estilos de los Iconos Redondos */
+.footer-social {
+    display: flex;
+    gap: 15px; /* Espacio entre bolitas */
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1); /* Círculo semitransparente */
+    border-radius: 50%; /* Los hace redondos */
+    color: #ffffff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.social-icon:hover {
+    background-color: #ffffff; /* Se vuelve blanco */
+    color: var(--primary-accent); /* El icono toma el color azul */
+    transform: translateY(-3px); /* Se levanta un poquito */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra brillante */
+}
+
+/* Barra inferior de copyright */
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2); /* Un poco más oscuro que el azul */
+    padding: 15px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    text-align: center;
+}
+
+/* =========================================
+   FOOTER EN MÓVIL (Celular)
+   ========================================= */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Apilar verticalmente */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-brand {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .footer-brand p {
+        text-align: center; /* Centrar texto en móvil */
+    }
+
+    /* Ajuste para que la barra inferior no choque con el menú de app */
+    .main-footer {
+        padding-bottom: 60px; /* Espacio extra para tu menú flotante */
+    }
 }
