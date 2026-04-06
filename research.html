@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research | David Torres</title>
+    <title>Research & Prototyping | David Torres</title>
+    <meta name="description" content="Swarm robotic manipulation (SCARA, ROS, ARGoS), autonomous navigation (Nav2, SLAM, MPC), and 3D prototyping by David Torres — CoRAL Lab, ESPOL.">
+    <link rel="canonical" href="https://davatorr1009.github.io/research.html">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +24,7 @@
         
         <ul>
             <li><p><strong>R&D Projects</strong></p></li> <li>
-                <a href="research.html">
+                <a href="research.html" class="active">
                     <i class="fas fa-project-diagram"></i> <span class="nav-text">Research & Prototyping</span>
                 </a>
             </li>
@@ -65,48 +68,76 @@
             </div>
             
             <div class="project-content results-mode">
-                
+
                 <div class="project-text">
                     <p>
-                        This thesis focused on designing a <strong>manipulation module</strong> for a local designed differential robot, enabling them to pick up objects from the environment. Leveraging this mechanism, we developed a <strong>decentralized swarm strategy</strong> for gathering and transporting chips, achieving faster grouping efficiency without central control.
+                        Designed and integrated a <strong>five-bar parallel SCARA manipulator</strong> for the QUPA differential robot, enabling cooperative construction tasks through decentralized swarm coordination. The system combines <strong>computer vision</strong> for object detection with a <strong>modular electronic architecture</strong> — fabricated entirely via additive manufacturing.
                     </p>
-                    <ul class="custom-list">
-                        <li><i class="fas fa-code-branch list-icon"></i> <strong>Stack: </strong> ROS (Noetic), Python, C++.</li>
-                        <li><i class="fas fa-robot list-icon"></i> <strong>Simulation: </strong> ARGoS & Gazebo.</li>
-                        <li><i class="fas fa-check-circle list-icon"></i> <strong>Result: </strong> Validated with 12 agents.</li>
+
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <span class="metric-value">96%</span>
+                            <span class="metric-label">Grasping success rate</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">±4 mm</span>
+                            <span class="metric-label">Positioning accuracy</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">58.5%</span>
+                            <span class="metric-label">Task time reduction (3 robots vs 1)</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">&gt;90%</span>
+                            <span class="metric-label">Aggregation efficiency</span>
+                        </div>
+                    </div>
+
+                    <ul class="custom-list" style="margin-top: 15px;">
+                        <li><i class="fas fa-code-branch list-icon"></i> <strong>Stack:</strong> ROS (Noetic), Python, C++, OpenCV.</li>
+                        <li><i class="fas fa-robot list-icon"></i> <strong>Simulation:</strong> ARGoS (swarm) &amp; Gazebo (embodiment).</li>
+                        <li><i class="fas fa-clock list-icon"></i> <strong>Autonomy:</strong> 106 min under max load.</li>
+                        <li><i class="fas fa-info-circle list-icon"></i> <strong>Status:</strong> Simulation-validated; physical deployment constrained by hardware assembly timeline — ongoing.</li>
                     </ul>
+
+                    <div class="cv-wrapper" style="justify-content: flex-start; margin-top: 20px;">
+                        <a href="https://github.com/coral-espol/qupa_gazebo" target="_blank" class="download-btn download-btn--outline" style="font-size:0.85rem; padding: 9px 20px;">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="project-media">
                     <video controls class="styled-video" poster="assets/img/Qupa_sim.png">
                         <source src="assets/videos/qupa_collective.mp4" type="video/mp4">
-                        Tu navegador no soporta videos.
+                        Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
 
+            <div class="slider-wrapper">
             <div class="slider-viewport">
                 <div class="slider-track" id="track">
-                    
+
                     <div class="slide">
                         <img src="assets/img/module 3D.png" alt="Robot Design">
-                        <div class="slide-caption">Diseño Mecánico</div>
+                        <div class="slide-caption">Mechanical Design</div>
                     </div>
                     <div class="slide">
                         <img src="assets/img/Modelo_final.jpg" alt="Final Model">
-                        <div class="slide-caption">Implementación</div>
+                        <div class="slide-caption">Physical Build</div>
                     </div>
                     <div class="slide">
                         <img src="assets/img/Qupa_sim.png" alt="Simulation">
-                        <div class="slide-caption">Simulación</div>
+                        <div class="slide-caption">Simulation</div>
                     </div>
                     <div class="slide">
                         <img src="assets/img/qupa_leds.jpg" alt="LED Test">
-                        <div class="slide-caption">Prueba LED</div>
+                        <div class="slide-caption">LED Test</div>
                     </div>
                     <div class="slide">
                         <img src="assets/img/bloobs_leds.png" alt="ARGoS">
-                        <div class="slide-caption">Pruebas ARGoS</div>
+                        <div class="slide-caption">ARGoS Testing</div>
                     </div>
                     <div class="slide">
                         <img src="assets/img/Real vs Sim.png" alt="Comparison">
@@ -114,14 +145,17 @@
                     </div>
                     <div class="slide">
                         <img src="assets/img/Test_real.jpg" alt="Physical Test">
-                        <div class="slide-caption">Pruebas Físicas</div>
+                        <div class="slide-caption">Physical Testing</div>
                     </div>
 
                 </div>
             </div>
+            <button class="slider-btn slider-btn--prev">&#8249;</button>
+            <button class="slider-btn slider-btn--next">&#8250;</button>
+            </div>
         </section>
         <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
-        <section id="Autonomous Navigation" class="content-box">
+        <section id="autonomous-navigation" class="content-box">
             <div class="section-title">
                 <h3><i class="fas fa-cubes"></i> Autonomous Navigation</h3>
                 <p>Intership at Robotics and Intelligent Systems Engineer Lab | <em> 2024 (RISE) - Remote</em></p>
@@ -143,11 +177,12 @@
                 <div class="project-media">
                     <video controls class="styled-video" poster="assets/img/navigation/nav2.png">
                         <source src="assets/videos/navigation.mp4" type="video/mp4">
-                        Tu navegador no soporta videos.
+                        Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
 
+            <div class="slider-wrapper">
             <div class="slider-viewport">
                 <div class="slider-track" id="track_nav">
                     
@@ -190,6 +225,14 @@
 
                 </div>
             </div>
+            <button class="slider-btn slider-btn--prev">&#8249;</button>
+            <button class="slider-btn slider-btn--next">&#8250;</button>
+            </div>
+                <div class="cv-wrapper">
+                    <a href="assets/docs/Certificate Internship David Torres.pdf" class="download-btn" target="_blank">
+                        <i class="fas fa-certificate"></i> Download Certificate
+                    </a>
+                </div>
         </section>
 
 
@@ -213,11 +256,11 @@
                 </div>
                 
                 <div class="project-media">
-                    <!-- FOTO PRINCIPAL (Reemplaza al video) -->
                     <img src="assets/img/3D/Protesis.png" alt="Prosthesis Prototype" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                 </div>
             </div>
 
+            <div class="slider-wrapper">
             <div class="slider-viewport">
                 <div class="slider-track" id="track_3d">
                     <div class="slide"><img src="assets/img/3D/slicing.png" alt="3D Print"><div class="slide-caption">Slicing</div></div>
@@ -227,6 +270,29 @@
                     <div class="slide"><img src="assets/img/3D/impresion_2.png" alt="Testing"><div class="slide-caption">Pieces</div></div>
                     <div class="slide"><img src="assets/img/3D/impresion_4.png" alt="Final Model"><div class="slide-caption">Pieces</div></div>
                 </div>
+            </div>
+            <button class="slider-btn slider-btn--prev">&#8249;</button>
+            <button class="slider-btn slider-btn--next">&#8250;</button>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
+
+        <section id="credentials" class="content-box">
+            <h3 class="section-title" style="font-size: 0.95rem;"><i class="fas fa-certificate"></i> Credentials & Training</h3>
+            <div class="cert-row">
+                <a href="assets/docs/ABK-CC-032026-5297-DAVID ALEJANDRO TORRES TORRES - 0923042683.pdf" target="_blank" class="cert-badge">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>ROS Certification — ABK</span>
+                </a>
+                <a href="assets/docs/TOEFL_Score_Report_David_Torres.pdf" target="_blank" class="cert-badge">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>TOEFL iBT — Score 86</span>
+                </a>
+                <a href="assets/docs/Certificate Internship David Torres.pdf" target="_blank" class="cert-badge">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>RISE Lab Internship — SKKU</span>
+                </a>
             </div>
         </section>
 
@@ -260,112 +326,6 @@
         </div>
     </footer>
 
-    <script>
-        const track = document.getElementById('track');
-        // Obtenemos todos los slides reales
-        const slides = track.querySelectorAll('.slide');
-        
-        let index = 0;
-
-        function nextSlide() {
-            // DETECTAR: ¿Es móvil o PC?
-            // Si ancho < 768px, mostramos 1 foto. Si no, mostramos 3.
-            const slidesPerView = window.innerWidth < 768 ? 1 : 3;
-            
-            // Calculamos el índice máximo para no pasarnos a blanco
-            const maxIndex = slides.length - slidesPerView; 
-
-            index++;
-            
-            // Si llegamos al final, volver al inicio
-            if (index > maxIndex) {
-                index = 0;
-            }
-
-            // EL CÁLCULO MÁGICO:
-            // En Móvil: index * 100% (Mueve 1 foto entera)
-            // En PC: index * 33.33% (Mueve 1/3 de foto)
-            const percentage = index * (100 / slidesPerView);
-            
-            track.style.transform = `translateX(-${percentage}%)`;
-        }
-
-        // Reiniciar al cambiar tamaño de ventana para evitar errores de cálculo
-        window.addEventListener('resize', () => {
-            index = 0;
-            track.style.transform = 'translateX(0)';
-        });
-
-        // Mover cada 3 segundos
-        setInterval(nextSlide, 3000);
-    </script>
-    <script>
-        const track_nav = document.getElementById('track_nav');
-        // Obtenemos todos los slides reales
-        const slides_nav = track_nav.querySelectorAll('.slide');
-        
-        let index_nav = 0;
-
-        function nextSlideNav() {
-            // DETECTAR: ¿Es móvil o PC?
-            // Si ancho < 768px, mostramos 1 foto. Si no, mostramos 3.
-            const slidesPerView = window.innerWidth < 768 ? 1 : 3;
-            
-            // Calculamos el índice máximo para no pasarnos a blanco
-            const maxIndex_nav = slides_nav.length - slidesPerView; 
-
-            index_nav++;
-            
-            // Si llegamos al final, volver al inicio
-            if (index_nav > maxIndex_nav) {
-                index_nav = 0;
-            }
-
-            // EL CÁLCULO MÁGICO:
-            // En Móvil: index * 100% (Mueve 1 foto entera)
-            // En PC: index * 33.33% (Mueve 1/3 de foto)
-            const percentage_nav = index_nav * (100 / slidesPerView);
-            
-            track_nav.style.transform = `translateX(-${percentage_nav}%)`;
-        }
-
-        // Reiniciar al cambiar tamaño de ventana para evitar errores de cálculo
-        window.addEventListener('resize', () => {
-            index_nav = 0;
-            track_nav.style.transform = 'translateX(0)';
-        });
-
-        // Mover cada 3 segundos
-        setInterval(nextSlideNav, 3000);
-    </script>
-    <script>
-        const track_3d = document.getElementById('track_3d');
-        // Obtenemos todos los slides reales
-        const slides_3d = track_3d.querySelectorAll('.slide');
-        
-        let index_3d = 0;
-
-        function nextSlide3D() {
-            // DETECTAR: ¿Es móvil o PC?
-            const slidesPerView = window.innerWidth < 768 ? 1 : 3;
-            const maxIndex_3d = slides_3d.length - slidesPerView; 
-
-            index_3d++;
-            
-            if (index_3d > maxIndex_3d) {
-                index_3d = 0;
-            }
-
-            const percentage_3d = index_3d * (100 / slidesPerView);
-            track_3d.style.transform = `translateX(-${percentage_3d}%)`;
-        }
-
-        window.addEventListener('resize', () => {
-            index_3d = 0;
-            track_3d.style.transform = 'translateX(0)';
-        });
-
-        setInterval(nextSlide3D, 3000);
-    </script>
+    <script src="animations.js"></script>
 </body>
 </html>

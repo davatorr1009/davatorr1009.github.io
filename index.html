@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Torres | Mechatronics Engineer</title>
+    <title>David Torres | Swarm Robotics Researcher</title>
+    <meta name="description" content="David Torres — Mechatronics Engineer and Swarm Robotics Researcher at CoRAL Lab, ESPOL. Autonomous systems, ROS 2, swarm intelligence, industrial automation. Seeking graduate opportunities in robotics.">
+    <meta property="og:title" content="David Torres | Swarm Robotics Researcher">
+    <meta property="og:description" content="Portfolio: swarm robotic manipulation, autonomous navigation (RISE Lab/SKKU), industrial automation. CoRAL Lab, ESPOL.">
+    <meta property="og:image" content="https://davatorr1009.github.io/assets/img/profile.jpeg">
+    <meta property="og:url" content="https://davatorr1009.github.io/">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://davatorr1009.github.io/">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <aside class="sidebar">
         <ul>
             <li>
-                <a href="index.html">
+                <a href="index.html" class="active">
                     <i class="fas fa-home"></i>
                     <span class="nav-text">Home</span>
                 </a>
@@ -62,14 +70,15 @@
     <main>
         <section id="intro" class="container">
             
-        <div class="profile-wrapper">
+        <div class="profile-wrapper hero-fadein">
             <div class="profile-image">
-                <img src="assets/img/profile.jpeg" alt="David Torres" class="photo">
+                <img src="assets/img/profile.jpeg" alt="David Torres — Swarm Robotics Researcher, ESPOL" class="photo" loading="eager">
             </div>
 
             <div class="profile-content">
                 <h1>David Alejandro Torres Torres</h1>
-                <p class="tagline"> Mechatronics Engineer | Swarm Robotics Researcher | Industrial Automation </p>
+                <p class="tagline">Mechatronics Engineer &nbsp;·&nbsp; Swarm Robotics (CoRAL Lab / ESPOL) &nbsp;·&nbsp; International Research Collaborations<br>
+                <span style="font-size: 0.9em; font-style: italic; color: var(--text-dark);" data-type="Seeking graduate opportunities in autonomous systems &amp; bio-inspired robotics"></span></p>
                 
                 <div class="about-me">
                     <h3 class="section-title">About Me</h3>
@@ -87,7 +96,7 @@
         </div>
 
             
-            <div class="research-collaboration content-box">
+        <div class="research-collaboration content-box">
             <h3 class="section-title"><i class="fas fa-globe-americas"></i> Research and International Collaboration</h3>
             
             <div class="news-grid">
@@ -133,8 +142,62 @@
 
             <div class="cv-wrapper">
                 <a href="assets/docs/David_Torres_CV.pdf" class="download-btn" target="_blank">
-                    <i class="fas fa-file-pdf"></i> Download Full CV
+                    <i class="fas fa-file-pdf"></i> Download CV
                 </a>
+                <a href="research.html" class="download-btn download-btn--outline">
+                    <i class="fas fa-flask"></i> View Research
+                </a>
+            </div>
+
+            <div class="content-box" style="margin-bottom: 30px;">
+                <h3 class="section-title"><i class="fas fa-flask"></i> Research Interests</h3>
+                <div class="news-grid">
+                    <div class="news-item">
+                        <h4 style="color: var(--primary-accent); margin-bottom: 10px;"><i class="fas fa-robot"></i> Swarm Intelligence</h4>
+                        <p style="font-size: 0.9rem;">Decentralized multi-agent coordination for collective manipulation and construction-oriented tasks. Bio-inspired emergent behaviors without central control.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4 style="color: var(--primary-accent); margin-bottom: 10px;"><i class="fas fa-map-marked-alt"></i> Autonomous Navigation</h4>
+                        <p style="font-size: 0.9rem;">SLAM-based localization, Nav2 architectures, and benchmarking local planners (MPC, MPPI, DWA) for navigation in dynamic, unstructured environments.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4 style="color: var(--primary-accent); margin-bottom: 10px;"><i class="fas fa-brain"></i> Sim-to-Real Transfer</h4>
+                        <p style="font-size: 0.9rem;">Multi-fidelity simulation pipelines (ARGoS + Gazebo/ROS) to validate robot behaviors before physical deployment.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4 style="color: var(--primary-accent); margin-bottom: 10px;"><i class="fas fa-link"></i> Cyber-Physical Systems</h4>
+                        <p style="font-size: 0.9rem;">Bridging research robotics and industrial automation — IIoT, PLC integration, and safety-critical system design.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box" style="margin-bottom: 30px;">
+                <h3 class="section-title"><i class="fas fa-book-open"></i> Publications &amp; IP</h3>
+
+                <div class="news-item highlight" style="margin-top: 15px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px;">
+                        <h4 style="color: var(--primary-accent); margin: 0;">
+                            <i class="fas fa-lock"></i>&nbsp; Modular Robotic Platform and Manipulation System for Swarm Construction Robots
+                        </h4>
+                        <span style="font-size:0.8rem; background:var(--primary-accent); color:#fff; padding:2px 10px; border-radius:20px; white-space:nowrap;">IP Filing · 2025</span>
+                    </div>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">
+                        Co-inventor of a modular robotic actuator for swarm platforms capable of collective manipulation and construction tasks. Primary contributions: mechanical &amp; electromechanical design, CAD modeling of robot base and actuator assembly, electronics schematics, and actuator–platform integration.
+                    </p>
+                    <p style="font-size: 0.8rem; color: var(--text-dark); margin-top: 6px;"><i class="fas fa-building"></i>&nbsp; CoRAL Lab, ESPOL &nbsp;·&nbsp; <em>Industrial secret — filing stage</em></p>
+                </div>
+
+                <div class="news-item" style="margin-top: 12px;">
+                    <h4 style="color: var(--primary-accent); margin-bottom: 6px;">
+                        <i class="fas fa-hourglass-half"></i>&nbsp; Thesis Manuscript
+                    </h4>
+                    <p style="font-size: 0.9rem;">
+                        <em>"Swarm Robotic Manipulation and Collective Transport for Construction-Oriented Tasks"</em> — B.Sc. thesis, ESPOL 2025. Manuscript in preparation for journal submission.
+                    </p>
+                    <p style="font-size: 0.8rem; color: var(--text-dark); margin-top: 6px;"><i class="fas fa-users"></i>&nbsp; Supervisors: Dr. Christian Tutiven (CoRAL/ESPOL) &amp; Prof. David Garzón Ramos (UCD, Ireland)</p>
+                </div>
+
+                <p style="font-size: 0.82rem; color: #aaa; margin-top: 12px;">Additional papers and preprints will appear here as they become available.</p>
             </div>
 
             <div class="news-section">
@@ -152,6 +215,43 @@
                         <span class="news-date">2025</span>
                         <p><strong>Industry Training:</strong> Completed the Holcim Innovation Chair program on management and sustainability.</p>
                     </div>
+                </div>
+            </div>
+
+            <div class="content-box" style="margin-bottom: 30px;">
+                <h3 class="section-title"><i class="fas fa-compass"></i> Beyond the Lab</h3>
+                <div class="hobbies-grid">
+
+                    <div class="hobby-card hobby-card--portrait">
+                        <div class="hobby-img-wrapper" style="position:relative; overflow:hidden;">
+                            <div class="hobby-slider" id="hobby-futbol">
+                                <img src="assets/img/hobbies/futbol2.JPG" alt="Football team photo" loading="lazy">
+                                <img src="assets/img/hobbies/futbol.jpeg" alt="Football tournament trophy" loading="lazy" style="object-position: center 45%;">
+                            </div>
+                            <button class="slider-btn slider-btn--prev" onclick="hobbySlide('hobby-futbol',-1)">&#8249;</button>
+                            <button class="slider-btn slider-btn--next" onclick="hobbySlide('hobby-futbol', 1)">&#8250;</button>
+                        </div>
+                        <div class="hobby-body">
+                            <h4><i class="fas fa-futbol"></i> Football</h4>
+                            <p>Champions of the Unidad Educativa Javier alumni tournament. A practice in team coordination, quick decision-making, and collective dynamics.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card hobby-card--landscape">
+                        <div class="hobby-img-wrapper" style="position:relative; overflow:hidden;">
+                            <div class="hobby-slider" id="hobby-trekking">
+                                <img src="assets/img/hobbies/trekking2.jpg" alt="Sunset above the clouds" loading="lazy">
+                                <img src="assets/img/hobbies/trekking.jpg"  alt="Trekking in Ecuador highlands" loading="lazy" style="object-position: center 60%;">
+                            </div>
+                            <button class="slider-btn slider-btn--prev" onclick="hobbySlide('hobby-trekking',-1)">&#8249;</button>
+                            <button class="slider-btn slider-btn--next" onclick="hobbySlide('hobby-trekking', 1)">&#8250;</button>
+                        </div>
+                        <div class="hobby-body">
+                            <h4><i class="fas fa-mountain"></i> Trekking & Hiking</h4>
+                            <p>High-altitude routes in the Ecuadorian Andes. Drawn to the methodical challenge of summit approaches — patience, preparation, and incremental progress under uncertainty.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -186,5 +286,16 @@
         </div>
     </footer>
 
+    <script src="animations.js"></script>
+    <script>
+        const hobbyState = {};
+        function hobbySlide(id, dir) {
+            const slider = document.getElementById(id);
+            const total = slider.querySelectorAll('img').length;
+            if (!hobbyState[id]) hobbyState[id] = 0;
+            hobbyState[id] = (hobbyState[id] + dir + total) % total;
+            slider.style.transform = `translateX(-${hobbyState[id] * 100}%)`;
+        }
+    </script>
 </body>
 </html>

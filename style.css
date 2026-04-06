@@ -109,9 +109,14 @@ p, li {
     font-size: 0.9rem;           /* FUENTE REDUCIDA para que no se vea gigante */
 }
 
-.sidebar a:hover {
-    background-color: rgba(0, 51, 102, 0.08);
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: rgba(0, 51, 102, 0.10);
     color: var(--primary-accent);
+}
+
+.sidebar a.active {
+    border-left: 3px solid var(--primary-accent);
 }
 
 .sidebar i {
@@ -160,6 +165,14 @@ h1, h2, h3 { color: var(--primary-accent); }
 .header-content .social-links {
         display: none;
     }
+/* Grid de noticias y competencias */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
 /* Grid de Proyectos (PC) */
 .project-content {
     display: grid;
@@ -177,6 +190,51 @@ h1, h2, h3 { color: var(--primary-accent); }
 
 .custom-list li {
     margin-bottom: 8px;    /* Espacio entre cada elemento de la lista */
+}
+
+/* --- BOTONES DE DESCARGA (CV / CERTIFICADOS) --- */
+.cv-wrapper {
+    margin: 30px 0;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--primary-accent);
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 50px;       /* Borde redondeado tipo píldora */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.download-btn:hover {
+    background-color: #002244;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    color: #ffffff;
+}
+
+.download-btn--outline {
+    background-color: transparent;
+    border: 2px solid var(--primary-accent);
+    color: var(--primary-accent);
+    box-shadow: none;
+}
+
+.download-btn--outline:hover {
+    background-color: var(--primary-accent);
+    color: #ffffff;
+}
+
+.cv-wrapper {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* =========================================
@@ -307,6 +365,40 @@ h1, h2, h3 { color: var(--primary-accent); }
 }
 
 /* =========================================
+   MÉTRICAS DE RESULTADOS
+   ========================================= */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.metric-item {
+    background: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--primary-accent);
+    border-radius: 4px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.metric-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-accent);
+    white-space: nowrap;
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+/* =========================================
    4.2. GRID DE DETALLES Y VIDEO
    ========================================= */
 .project-detail-grid {
@@ -341,6 +433,40 @@ h1, h2, h3 { color: var(--primary-accent); }
 /* =========================================
    ESTILOS ESPECÍFICOS DEL CARRUSEL (SLIDER)
    ========================================= */
+
+/* Wrapper para posicionar los botones */
+.slider-wrapper {
+    position: relative;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn:hover {
+    background: rgba(0, 51, 102, 0.85);
+}
+
+.slider-btn--prev { left: 8px; }
+.slider-btn--next { right: 8px; }
+
+
 
 /* 1. El Marco (Viewport) */
 .slider-viewport {
@@ -610,6 +736,216 @@ h1, h2, h3 { color: var(--primary-accent); }
 }
 
 /* =========================================
+   CERTIFICATES
+   ========================================= */
+.cert-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.cert-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.82rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    background: var(--secondary-bg);
+    transition: all 0.2s ease;
+}
+
+.cert-badge i {
+    color: var(--primary-accent);
+    font-size: 0.85rem;
+}
+
+.cert-badge:hover {
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+    background: rgba(0, 51, 102, 0.04);
+}
+
+/* =========================================
+   HOBBIES
+   ========================================= */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+    align-items: start;
+}
+
+.hobby-card--wide {
+    grid-column: 1 / -1;
+}
+
+.hobby-card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: var(--secondary-bg);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hobby-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,51,102,0.10);
+}
+
+.hobby-img-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hobby-card--portrait .hobby-img-wrapper,
+.hobby-card--landscape .hobby-img-wrapper {
+    height: 420px;
+}
+
+.hobby-card--wide .hobby-img-wrapper {
+    height: 360px;
+}
+
+/* Hobby mini-slider */
+.hobby-slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.45s ease;
+}
+
+.hobby-slider img {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+}
+
+.hobby-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.hobby-card:hover .hobby-img-wrapper img {
+    transform: scale(1.04);
+}
+
+.hobby-body {
+    padding: 14px 16px;
+}
+
+.hobby-body h4 {
+    color: var(--primary-accent);
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.hobby-body p {
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    margin: 0;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .hobby-card--portrait .hobby-img-wrapper,
+    .hobby-card--landscape .hobby-img-wrapper,
+    .hobby-card--wide .hobby-img-wrapper {
+        height: 260px;
+    }
+}
+
+/* =========================================
+   ANIMACIONES
+   ========================================= */
+
+/* --- Scroll Reveal --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger: cada hijo tarda un poco más */
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.25s; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.35s; }
+
+.reveal-stagger.visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Hover en tarjetas --- */
+.news-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 51, 102, 0.10);
+}
+
+/* --- Hover en métricas --- */
+.metric-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.metric-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.12);
+    border-left-color: #0055aa;
+}
+
+/* --- Typing effect cursor --- */
+.typing-cursor::after {
+    content: '|';
+    animation: blink 0.8s step-end infinite;
+    color: var(--primary-accent);
+    font-weight: 300;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+/* --- Fade-in del hero al cargar --- */
+.hero-fadein {
+    animation: heroFade 0.7s ease both;
+}
+
+@keyframes heroFade {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
    FOOTER PROFESIONAL
    ========================================= */
 
@@ -691,9 +1027,6 @@ h1, h2, h3 { color: var(--primary-accent); }
     text-align: center;
 }
 
-/* =========================================
-   FOOTER EN MÓVIL (Celular)
-   ========================================= */
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column; /* Apilar verticalmente */

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Industrial Experience | David Torres</title>
+    <meta name="description" content="Industrial automation experience: PLC systems (Siemens), HMI/SCADA, electrical panel design, VFDs. WG Selcon & Lácteos San Antonio — David Torres.">
+    <link rel="canonical" href="https://davatorr1009.github.io/industrial.html">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,7 +33,7 @@
         <ul>
             <li><p><strong>Professional</strong></p></li>
             <li>
-                <a href="industrial.html">
+                <a href="industrial.html" class="active">
                     <i class="fas fa-industry"></i>
                     <span class="nav-text">Industrial Exp.</span>
                 </a>
@@ -50,71 +53,154 @@
     <header class="logo-background">
         <div class="container header-content">
             <h2 style="color: #ffffff; margin: 0;">Industrial Experience</h2>
-        </div>
+             </div>
     </header>
 
     <main class="container">
         
-        <section id="holcim" class="content-box">
-            <div class="industry-header" style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
-                <i class="fas fa-building" style="font-size: 3rem; color: var(--text-dark);"></i>
-                <div>
-                    <h3 class="section-title" style="margin-bottom: 5px;">Holcim Innovation Chair</h3>
-                    <p class="tagline" style="font-size: 1rem; margin: 0;">Business Innovation & Sustainability | <em>2025</em></p>
+        <section id="wg-selcon" class="content-box">
+            <div class="section-title">
+                <h3><i class="fas fa-cog"></i> WG Selcon</h3>
+                <p><strong>Role:</strong> Automation Engineer — Industrial Systems | <strong>2023 – 2025</strong> &nbsp;·&nbsp; Hybrid, Part-time</p>
+            </div>
+
+            <div class="project-content results-mode">
+                <div class="project-text">
+                    <p>
+                        Led end-to-end development of <strong>PLC-based industrial automation systems</strong> for safety-critical infrastructure operating in 24/7 environments, including material handling, compression, and power conditioning systems.
+                    </p>
+                    <ul class="custom-list">
+                        <li>
+                            <i class="fas fa-bolt list-icon"></i>
+                            <span><strong>Electrical Panel Design:</strong> Engineered control panels for compressors, hydraulic rolling machinery, and power factor correction systems — component selection, schematics, and assembly.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-microchip list-icon"></i>
+                            <span><strong>PLC Software:</strong> Developed motor control logic, sequencing, interlocks, and distributed actuation on <strong>Siemens</strong> platforms. Retrofitted legacy machinery with modern PLC-based control.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-tachometer-alt list-icon"></i>
+                            <span><strong>Drives & Sensors:</strong> Integrated <strong>INVT variable-frequency drives</strong>, motor starters, and inductive load compensation. Signal scaling and normalization pipelines for pressure sensors and switches.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-desktop list-icon"></i>
+                            <span><strong>HMI–PLC:</strong> Deployed operator interfaces on <strong>Siemens</strong> and <strong>Flexem</strong> platforms for safe, user-centered operation of industrial systems.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-shield-alt list-icon"></i>
+                            <span><strong>Safety Systems:</strong> Implemented fault detection, safety logic, and operational interlocks protecting equipment and personnel in high-power electrical and hydraulic environments.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-hard-hat list-icon"></i>
+                            <span><strong>On-site Commissioning:</strong> Deployed and validated live systems under real production constraints — debugging, tuning, and handover to plant operators.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="project-media">
+                    <video controls class="styled-video" poster="assets/img/wg-selcon/blowers.JPEG">
+                        <source src="assets/img/wg-selcon/selcon.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
 
-            <p>
-                Selected for the prestigious 40-hour academic industry training program focused on <strong>innovation management</strong> and organizational transformation within the construction sector.
-            </p>
-
-            <div class="news-grid"> <div class="news-item">
-                    <h4 style="color: var(--primary-accent);"><i class="fas fa-tasks"></i> Project Management</h4>
-                    <p>Learned methodologies for managing high-impact industrial projects and resource optimization.</p>
+            <div class="slider-wrapper">
+            <div class="slider-viewport">
+                <div class="slider-track" id="track_selcon">
+                    <div class="slide"><img src="assets/img/wg-selcon/blowers.JPEG" alt="Blowers system" loading="lazy"><div class="slide-caption">Blower System</div></div>
+                    <div class="slide"><img src="assets/img/wg-selcon/blowers2.JPEG" alt="Blowers 2" loading="lazy"><div class="slide-caption">Blower Control</div></div>
+                    <div class="slide"><img src="assets/img/wg-selcon/blowers3.JPEG" alt="Blowers 3" loading="lazy"><div class="slide-caption">Installation</div></div>
+                    <div class="slide"><img src="assets/img/wg-selcon/capacitores.JPEG" alt="Power factor correction" loading="lazy"><div class="slide-caption">Power Factor Correction</div></div>
+                    <div class="slide"><img src="assets/img/wg-selcon/roladora.JPEG" alt="Hydraulic rolling machine" loading="lazy"><div class="slide-caption">Hydraulic Rolling Machine</div></div>
                 </div>
-                <div class="news-item">
-                    <h4 style="color: var(--primary-accent);"><i class="fas fa-leaf"></i> Sustainability</h4>
-                    <p>Focus on decarbonization strategies and sustainable manufacturing processes in heavy industry.</p>
-                </div>
+            </div>
+            <button class="slider-btn slider-btn--prev">&#8249;</button>
+            <button class="slider-btn slider-btn--next">&#8250;</button>
             </div>
         </section>
 
         <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
 
-        <section id="automation" class="content-box">
-            <h3 class="section-title"><i class="fas fa-cogs"></i> Industrial Automation & Control</h3>
-            <p style="margin-bottom: 20px;">
-                Hands-on experience in designing and implementing control logic for industrial machinery, bridging the gap between electrical design and software integration.
-            </p>
+        <section id="lab-tech" class="content-box">
+            <div class="section-title">
+                <h3><i class="fas fa-tools"></i> Laboratory Infrastructure Engineer</h3>
+                <p><strong>Role:</strong> Lab Technician (Bioengineering & Unmanned Vehicles) | <strong>ESPOL - 2026</strong></p>
+            </div>
 
-            <div class="project-detail-grid">
+            <div class="project-content results-mode">
+                
                 <div class="project-text">
+                    <p>
+                        In charge of the technical outfitting and commissioning of the new <strong>Bioengineering and Unmanned Vehicle Laboratory</strong>. My role involves bridging the gap between administrative procurement and technical implementation.
+                    </p>
                     <ul class="custom-list">
                         <li>
-                            <i class="fas fa-microchip list-icon"></i> 
-                            <span><strong>PLC Programming:</strong> Proficient in <strong>Siemens TIA Portal</strong> and LOGO! Soft Comfort for ladder logic and structured text programming.</span>
+                            <i class="fas fa-shopping-cart list-icon"></i> 
+                            <span><strong>Technical Procurement:</strong> Sourcing high-fidelity sensors (LiDAR, Depth Cameras), microcontrollers, and actuators for research.</span>
                         </li>
                         <li>
-                            <i class="fas fa-bolt list-icon"></i> 
-                            <span><strong>Electrical Design:</strong> Experience creating industrial schematics, panel layout design, and sensor integration.</span>
+                            <i class="fas fa-hard-hat list-icon"></i> 
+                            <span><strong>Safety & Standards:</strong> Implementing safety protocols for Lipo Battery storage and robotic testing areas.</span>
                         </li>
                         <li>
-                            <i class="fas fa-network-wired list-icon"></i> 
-                            <span><strong>SCADA/HMI:</strong> Developing interfaces for human-machine interaction and process monitoring.</span>
+                            <i class="fas fa-server list-icon"></i> 
+                            <span><strong>Equipment Setup:</strong> Installation and calibration of specialized workstations for mechatronic fabrication.</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="project-media">
                     <div class="video-placeholder">
-                        <i class="fas fa-drafting-compass" style="font-size: 40px; color: #555;"></i>
-                        <p>Automation Schematics / Panel Wiring</p>
-                        </div>
+                        <i class="fas fa-microscope" style="font-size: 40px; color: #555; margin-bottom: 10px;"></i>
+                        <p>Lab Equipment Setup<br>Procurement & Installation</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
+
+        <section id="technical-skills" class="content-box">
+            <h3 class="section-title"><i class="fas fa-cogs"></i> Technical Competencies</h3>
+            <p style="margin-bottom: 20px;">
+                Specialized hardware and protocols used in my industrial deployments.
+            </p>
+
+            <div class="news-grid"> 
+                <div class="news-item">
+                    <h4 style="color: var(--primary-accent);"><i class="fas fa-project-diagram"></i> Industrial Protocols</h4>
+                    <p>Experience configuring networks using <strong>Modbus TCP/RTU</strong>, <strong>Profinet</strong>, and MQTT for IIoT integration.</p>
+                </div>
+                <div class="news-item">
+                    <h4 style="color: var(--primary-accent);"><i class="fas fa-drafting-compass"></i> CAD & System Design</h4>
+                    <p>Mechanical and system-level design using <strong>Autodesk Inventor</strong>, <strong>SolidWorks</strong>, and <strong>Fusion 360</strong> for mechatronic integration and panel layouts.</p>
+                </div>
+                <div class="news-item">
+                    <h4 style="color: var(--primary-accent);"><i class="fas fa-wrench"></i> Hardware Integration</h4>
+                    <p>VFDs (Siemens / <strong>INVT</strong>), servo drives, motor starters, inductive load compensation, sensor instrumentation (pressure sensors, switches, 4-20mA, 0-10V).</p>
+                </div>
+                <div class="news-item">
+                    <h4 style="color: var(--primary-accent);"><i class="fas fa-shield-alt"></i> Safety & Commissioning</h4>
+                    <p>Safety interlocks, fault detection logic, and on-site commissioning of live automation systems under real production constraints.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
+
+        <section id="credentials" class="content-box">
+            <h3 class="section-title" style="font-size: 0.95rem;"><i class="fas fa-certificate"></i> Credentials & Training</h3>
+            <div class="cert-row">
+                <a href="assets/docs/Certificado_Holcim_David_Torres.pdf" target="_blank" class="cert-badge">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Holcim Innovation Chair</span>
+                </a>
+            </div>
+        </section>
+
     </main>
+
+    <script src="animations.js"></script>
 
     <footer class="main-footer">
         <div class="container footer-content">
