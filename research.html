@@ -280,6 +280,106 @@
 
         <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
 
+        <!-- ── Academic Design Projects ── -->
+        <section id="marker-system" class="content-box">
+            <div class="section-title">
+                <h3><i class="fas fa-pen-nib"></i> Mobile Marker System — Floor Plan Drawing</h3>
+                <p>Mechatronics Design | <em>ESPOL</em></p>
+            </div>
+
+            <div class="project-content results-mode">
+                <div class="project-text">
+                    <p>
+                        Designed and implemented a <strong>marker attachment for a TurtleBot3</strong> capable of tracing floor plans and large-scale images on flat surfaces. The system features a <strong>force-feedback actuator</strong> fabricated via additive manufacturing, controlled by an Arduino microcontroller with a discrete PID loop.
+                    </p>
+                    <ul class="custom-list" style="margin-top: 12px;">
+                        <li><i class="fas fa-sliders-h list-icon"></i> <strong>Control:</strong> PID designed in Simulink/Simscape Mechanics, discretized and deployed on Arduino.</li>
+                        <li><i class="fas fa-robot list-icon"></i> <strong>Platform:</strong> TurtleBot3 with custom 3D-printed actuator mount.</li>
+                        <li><i class="fas fa-check-circle list-icon"></i> <strong>Result:</strong> 90% drawing success rate. Current limitation: marker geometry must be adapted per pen type — generic marker support not yet achieved.</li>
+                        <li><i class="fas fa-code-branch list-icon"></i> <strong>Stack:</strong> ROS, Arduino, MATLAB/Simulink, Simscape Mechanics, Fusion 360.</li>
+                    </ul>
+                </div>
+
+                <div class="project-media">
+                    <video controls class="styled-video" poster="assets/img/proyectos/turtlebot_marker_3d.png">
+                        <source src="assets/videos/dimeca.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="cv-wrapper" style="justify-content: flex-start; margin-top: 20px;">
+                <a href="assets/docs/dimeca.pdf" target="_blank" class="download-btn download-btn--outline" style="font-size:0.85rem; padding: 9px 20px;">
+                    <i class="fas fa-file-pdf"></i> Download Report
+                </a>
+            </div>
+
+            <div class="slider-wrapper">
+            <div class="slider-viewport">
+                <div class="slider-track" id="track_marker">
+                    <div class="slide"><img src="assets/img/proyectos/marker_3d.png" alt="Marker actuator 3D model" loading="lazy"><div class="slide-caption">Actuator 3D Model</div></div>
+                    <div class="slide"><img src="assets/img/proyectos/marker_model.png" alt="Marker mechanical model" loading="lazy"><div class="slide-caption">Mechanical Model</div></div>
+                    <div class="slide"><img src="assets/img/proyectos/turtlebot_marker_3d.png" alt="TurtleBot3 with marker" loading="lazy"><div class="slide-caption">TurtleBot3 Integration</div></div>
+                    <div class="slide"><img src="assets/img/proyectos/turtlebot_marker_3d2.png" alt="TurtleBot3 marker side view" loading="lazy"><div class="slide-caption">Assembly View</div></div>
+                </div>
+            </div>
+            <button class="slider-btn slider-btn--prev">&#8249;</button>
+            <button class="slider-btn slider-btn--next">&#8250;</button>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
+
+        <section id="impedance-control" class="content-box">
+            <div class="section-title">
+                <h3><i class="fas fa-wave-square"></i> Impedance Control — Quadruped Leg</h3>
+                <p>Mobile &amp; Articulated Robots | <em>ESPOL</em></p>
+            </div>
+
+            <div class="project-content results-mode">
+                <div class="project-text">
+                    <p>
+                        Developed a <strong>dynamic model for a quadruped leg</strong> based on a 2R mobile articulated system, incorporating friction and damping. The model was implemented in <strong>MATLAB and Simulink Simscape Mechanics</strong> to simulate leg-surface contact dynamics and validate force feedback behavior.
+                    </p>
+                    <ul class="custom-list" style="margin-top: 12px;">
+                        <li><i class="fas fa-drafting-compass list-icon"></i> <strong>Model:</strong> 2R articulated leg with friction, damping, and contact force on a testing base.</li>
+                        <li><i class="fas fa-chart-line list-icon"></i> <strong>Simulation:</strong> Simscape Mechanics for multi-body dynamics and contact modeling.</li>
+                        <li><i class="fas fa-sliders-h list-icon"></i> <strong>Tuning:</strong> Explored stiffness and damping parameter space to achieve target compliance behaviors.</li>
+                        <li><i class="fas fa-code-branch list-icon"></i> <strong>Stack:</strong> MATLAB, Simulink, Simscape Mechanics.</li>
+                    </ul>
+                </div>
+
+                <div class="project-media">
+                    <video controls class="styled-video" poster="assets/img/proyectos/robot_leg_3d.png">
+                        <source src="assets/videos/impedancia.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div class="cv-wrapper" style="justify-content: flex-start; margin-top: 20px;">
+                <a href="assets/docs/Report_Robots.pdf" target="_blank" class="download-btn download-btn--outline" style="font-size:0.85rem; padding: 9px 20px;">
+                    <i class="fas fa-file-pdf"></i> Download Report
+                </a>
+            </div>
+
+            <div class="slider-wrapper">
+            <div class="slider-viewport">
+                <div class="slider-track" id="track_impedance">
+                    <div class="slide"><img src="assets/img/proyectos/robot_leg_3d.png" alt="Quadruped leg 3D" loading="lazy"><div class="slide-caption">Leg 3D Model</div></div>
+                    <div class="slide"><img src="assets/img/proyectos/robot_leg_coordinate.png" alt="Coordinate frame" loading="lazy"><div class="slide-caption">Coordinate Frame</div></div>
+                    <div class="slide"><img src="assets/img/proyectos/robot_leg_model.png" alt="Dynamic model" loading="lazy"><div class="slide-caption">Dynamic Model</div></div>
+                    <div class="slide"><img src="assets/img/proyectos/impedace_control.png" alt="Impedance control diagram" loading="lazy"><div class="slide-caption">Control Diagram</div></div>
+                    <div class="slide"><img src="assets/img/proyectos/impedance%20model.png" alt="Impedance model simulation" loading="lazy"><div class="slide-caption">Simscape Model</div></div>
+                </div>
+            </div>
+            <button class="slider-btn slider-btn--prev">&#8249;</button>
+            <button class="slider-btn slider-btn--next">&#8250;</button>
+            </div>
+        </section>
+
+        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
+
         <section id="credentials" class="content-box">
             <h3 class="section-title" style="font-size: 0.95rem;"><i class="fas fa-certificate"></i> Credentials & Training</h3>
             <div class="cert-row">

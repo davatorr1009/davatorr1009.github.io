@@ -840,6 +840,14 @@ h1, h2, h3 { color: var(--primary-accent); }
     box-shadow: none;
 }
 
+/* Diagram/technical carousels — show full image without cropping */
+#track_impedance .slide img,
+#track_marker .slide img {
+    object-fit: contain !important;
+    background: var(--primary-bg);
+    padding: 8px;
+}
+
 /* 5. Texto sobre la imagen */
 .slide-caption {
     position: absolute;
