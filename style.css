@@ -7,14 +7,134 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* ─── Dark mode toggle button ─── */
+#theme-toggle {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: var(--secondary-bg);
+    color: var(--text-light);
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+/* Dark mode hardcoded color overrides */
+[data-theme="dark"] .logo-background {
+    background-color: #0a1628;
+}
+
+[data-theme="dark"] .main-footer {
+    background-color: #0a1628;
+}
+
+[data-theme="dark"] .profile-wrapper {
+    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 60%);
+}
+
+[data-theme="dark"] .hobby-card {
+    background: var(--secondary-bg);
+}
+
+[data-theme="dark"] .metric-item {
+    background: var(--secondary-bg);
+}
+
+[data-theme="dark"] .news-item.award-gold {
+    background: linear-gradient(135deg, #1f1a0a 0%, #1a1d27 100%);
+}
+
+[data-theme="dark"] .news-item.award-gold h4 {
+    color: #e0b84a;
+}
+
+[data-theme="dark"] .news-item.award-gold i.fa-award {
+    color: #e0b84a;
+}
+
+[data-theme="dark"] .news-item.award-gold p {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .news-item.highlight {
+    background-color: var(--secondary-bg);
+    border-left-color: var(--primary-accent);
+}
+
+[data-theme="dark"] .download-btn--outline {
+    border-color: var(--primary-accent);
+    color: var(--primary-accent);
+}
+
+[data-theme="dark"] .download-btn--outline:hover {
+    background: var(--primary-accent);
+    color: #fff;
+}
+
+[data-theme="dark"] .sidebar {
+    background-color: var(--secondary-bg);
+}
+
+[data-theme="dark"] #scroll-progress {
+    background: linear-gradient(90deg, #4d9de0, #7ec8e3);
+}
+
+@media (max-width: 768px) {
+    #theme-toggle {
+        bottom: 78px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ─── Scroll progress bar ─── */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-accent), #0066cc);
+    z-index: 9999;
+    transition: width 0.1s linear;
+}
+
 :root {
-    /* PALETA PROFESIONAL (Light Mode) */
-    --primary-bg: #f4f6f8;       
-    --secondary-bg: #ffffff;     
-    --primary-accent: #003366;   
-    --text-light: #2c3e50;       
-    --text-dark: #555555;        
-    --border-color: #d1d5db;     
+    --primary-bg:     #f4f6f8;
+    --secondary-bg:   #ffffff;
+    --primary-accent: #003366;
+    --text-light:     #2c3e50;
+    --text-dark:      #555555;
+    --border-color:   #d1d5db;
+}
+
+[data-theme="dark"] {
+    --primary-bg:     #0f1117;
+    --secondary-bg:   #1a1d27;
+    --primary-accent: #4d9de0;
+    --text-light:     #e8eaf0;
+    --text-dark:      #a0a8b8;
+    --border-color:   #2e3245;
 }
 
 /* Regla base: imágenes nunca exceden su contenedor */
@@ -36,9 +156,9 @@ body {
     overflow-x: hidden;          /* IMPORTANTE: Evita que la pantalla se ensanche en móvil */
 }
 
-/* Texto justificado para párrafos y listas */
+/* Texto alineado a la izquierda */
 p, li {
-    text-align: justify;
+    text-align: left;
 }
 
 /* =========================================
@@ -48,6 +168,139 @@ p, li {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
+}
+
+/* ─── Homepage two-column layout ─── */
+.homepage-layout {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    align-items: start;
+}
+
+.homepage-layout > section {
+    min-width: 0;
+}
+
+.right-panel {
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 40px;
+}
+
+.right-panel-card {
+    background: var(--secondary-bg);
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.right-panel-card h4 {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--text-dark);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.skill-category {
+    margin-bottom: 12px;
+}
+
+.skill-category-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.skill-tag {
+    font-size: 0.73rem;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: rgba(0, 51, 102, 0.07);
+    color: var(--primary-accent);
+    border: 1px solid rgba(0, 51, 102, 0.14);
+    font-weight: 500;
+}
+
+[data-theme="dark"] .skill-tag {
+    background: rgba(77, 157, 224, 0.1);
+    border-color: rgba(77, 157, 224, 0.22);
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 7px 8px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    word-break: break-all;
+}
+
+.contact-link:hover {
+    background: rgba(0, 51, 102, 0.07);
+    color: var(--primary-accent);
+}
+
+.contact-link i {
+    width: 16px;
+    text-align: center;
+    color: var(--primary-accent);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1100px) {
+    .homepage-layout {
+        grid-template-columns: 1fr;
+    }
+    .right-panel {
+        position: static;
+        padding-top: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .right-panel-card {
+        flex: 1;
+        min-width: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .homepage-layout {
+        padding: 0 16px;
+    }
+    .right-panel {
+        flex-direction: column;
+    }
 }
 
 /* --- BARRA LATERAL MÁS FINA --- */
@@ -119,6 +372,24 @@ p, li {
     border-left: 3px solid var(--primary-accent);
 }
 
+@media (max-width: 768px) {
+    .sidebar a:hover,
+    .sidebar a:active,
+    .sidebar a.active {
+        border-left: none;
+        background-color: transparent !important;
+        color: var(--primary-accent);
+    }
+
+    .sidebar a.active i,
+    .sidebar a:active i {
+        background-color: rgba(0, 51, 102, 0.12);
+        border-radius: 14px;
+        padding: 6px 18px;
+        transition: background-color 0.15s ease;
+    }
+}
+
 .sidebar i {
     font-size: 1.1rem;           /* Iconos ligeramente más pequeños */
     min-width: 24px;
@@ -161,6 +432,19 @@ h1, h2, h3 { color: var(--primary-accent); }
 .news-item.highlight {
     border-left: 4px solid var(--primary-accent);
     background-color: #fcfdfe;
+}
+
+.news-item.award-gold {
+    border-left: 4px solid #c9972a;
+    background: linear-gradient(135deg, #fffdf4 0%, #ffffff 100%);
+}
+
+.news-item.award-gold h4 {
+    color: #b8860b;
+}
+
+.news-item.award-gold i.fa-award {
+    color: #c9972a;
 }
 .header-content .social-links {
         display: none;
@@ -263,13 +547,44 @@ h1, h2, h3 { color: var(--primary-accent); }
 }
 
 /* =========================================
+   ABOUT ME BULLETS
+   ========================================= */
+.about-bullets {
+    list-style: none;
+    padding: 0;
+    margin-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.about-bullets li {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-bullets li i {
+    color: var(--primary-accent);
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* =========================================
    3.1. PERFIL / INTRO (INDEX)
    ========================================= */
 .profile-wrapper {
     display: flex;
-    align-items: center;   /* Centrado vertical respecto al texto */
-    gap: 50px;             /* Separación entre foto y texto */
+    align-items: flex-start;
+    gap: 40px;
     margin: 40px 0;
+    background: linear-gradient(135deg, #eef2f7 0%, #ffffff 60%);
+    border-radius: 12px;
+    padding: 35px;
+    border: 1px solid var(--border-color);
 }
 
 .profile-image {
@@ -279,9 +594,28 @@ h1, h2, h3 { color: var(--primary-accent); }
 .profile-image img {
     width: 100%;
     height: auto;
-    border-radius: 12px;   /* Bordes redondeados modernos */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
     object-fit: cover;
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.12),
+        0 0 0 3px #ffffff,
+        0 0 0 5px rgba(0, 51, 102, 0.35);
+    animation: profileRing 3s ease-in-out infinite;
+}
+
+@keyframes profileRing {
+    0%, 100% {
+        box-shadow:
+            0 5px 20px rgba(0,0,0,0.12),
+            0 0 0 3px #ffffff,
+            0 0 0 5px rgba(0, 51, 102, 0.35);
+    }
+    50% {
+        box-shadow:
+            0 8px 25px rgba(0,0,0,0.15),
+            0 0 0 3px #ffffff,
+            0 0 0 7px rgba(0, 51, 102, 0.15);
+    }
 }
 
 /* Carrusel */
@@ -453,6 +787,7 @@ h1, h2, h3 { color: var(--primary-accent); }
     line-height: 1;
     cursor: pointer;
     z-index: 10;
+    touch-action: manipulation;
     transition: background 0.2s ease;
     display: flex;
     align-items: center;
@@ -550,12 +885,40 @@ h1, h2, h3 { color: var(--primary-accent); }
         gap: 15px;
     }
 
-    /* Reducimos el tamaño en móvil específicamente */
+    /* --- IMÁGENES Y VIDEOS MÓVIL --- */
     .project-media img, .video-placeholder, .styled-video {
-        max-width: 280px;   /* ¡AQUÍ! En móvil máximo miden 280px */
-        max-height: 200px;  /* Altura controlada */
-        margin: 0 auto;     /* Centradas */
-        object-fit: cover;  /* Asegura que rellene el cuadro sin deformarse */
+        max-width: 100%;
+        max-height: 220px;
+        margin: 0 auto;
+        object-fit: cover;
+    }
+
+    /* --- METRICS GRID: 1 columna en móvil --- */
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* --- CAROUSEL BUTTONS: más grandes para touch --- */
+    .slider-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.4rem;
+    }
+
+    /* --- HOBBY SLIDER overflow fix --- */
+    .hobby-img-wrapper {
+        overflow: hidden;
+    }
+
+    /* --- TYPING EFFECT: reserva altura para evitar salto --- */
+    .tagline span[data-type] {
+        display: inline-block;
+        min-height: 1.2em;
+    }
+
+    /* --- CERT ROW en leadership: espaciado --- */
+    .cert-row {
+        margin-bottom: 16px;
     }
 
     /* Foto de perfil móvil */
@@ -566,25 +929,15 @@ h1, h2, h3 { color: var(--primary-accent); }
         display: block;
     }
 
-    /* --- TARJETA "ABOUT ME" --- */
+    /* --- ABOUT ME MÓVIL --- */
     .about-me {
-        background-color: var(--secondary-bg); /* Fondo blanco */
-        padding: 25px;                         /* Espacio interno cómodo */
-        border-radius: 8px;                    /* Bordes redondeados */
-        border: 1px solid var(--border-color); /* Borde gris suave */
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);/* Sombra elegante */
-        
-        margin-top: 25px;                      /* Separación del nombre y tagline */
-        text-align: justify;                   /* Texto justificado para que se vea ordenado */
+        margin-top: 16px;
+        text-align: justify;
     }
 
-    /* Opcional: Ajuste del título dentro de la tarjeta */
-    .about-me h3 {
-        margin-top: 0;
-        margin-bottom: 15px;
-        border-bottom: 2px solid var(--primary-accent); /* Línea azul debajo del título */
-        display: inline-block;
-        padding-bottom: 5px;
+    .about-bullets li {
+        justify-content: flex-start;
+        text-align: justify;
     }
 
     /* --- MENÚ INFERIOR --- */
@@ -676,11 +1029,11 @@ h1, h2, h3 { color: var(--primary-accent); }
         color: var(--primary-accent);
     }
     /* --- TEXTOS MÓVIL --- */
-    h1 { font-size: 1.2rem; text-align: center; } /* Título principal más controlado */
-    h2 { font-size: 1rem; }    /* Título de barra superior ajustado */
-    h3 { font-size: 0.95rem; } /* Títulos de sección (About Me, etc.) más discretos */
-    p, li { 
-        font-size: 0.85rem;    /* Texto de lectura más fino y elegante */
+    h1 { font-size: 1.2rem; text-align: center; }
+    h2 { font-size: 1rem; }
+    h3 { font-size: 0.95rem; }
+    p, li {
+        font-size: 0.85rem;
         text-align: justify;
     }
 
@@ -712,9 +1065,15 @@ h1, h2, h3 { color: var(--primary-accent); }
 
     /* --- PERFIL MÓVIL --- */
     .profile-wrapper {
-        flex-direction: column; /* Columna: Foto arriba, texto abajo */
-        text-align: center;     /* Texto centrado */
+        flex-direction: column;
+        text-align: center;
         gap: 20px;
+        padding: 20px;
+        background: linear-gradient(135deg, #eef2f7 0%, #ffffff 80%);
+    }
+
+    .about-bullets li {
+        justify-content: center;
     }
 
     .profile-image {
@@ -813,7 +1172,12 @@ h1, h2, h3 { color: var(--primary-accent); }
     height: 360px;
 }
 
-/* Hobby mini-slider */
+/* Hobby mini-slider — overflow handled in CSS, not inline */
+.hobby-img-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
 .hobby-slider {
     display: flex;
     width: 100%;

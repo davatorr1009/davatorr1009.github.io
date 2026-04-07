@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | David Torres</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23003366'/><text x='50' y='68' font-size='48' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>DT</text></svg>">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .error-code {
+            font-size: 7rem;
+            font-weight: 800;
+            color: var(--primary-accent);
+            line-height: 1;
+            opacity: 0.15;
+            letter-spacing: -4px;
+            margin-bottom: -20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .error-icon {
+            font-size: 3.5rem;
+            color: var(--primary-accent);
+            margin-bottom: 20px;
+        }
+
+        .error-page h1 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .error-page p {
+            font-size: 1rem;
+            color: var(--text-dark);
+            max-width: 400px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .error-nav {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-text">Home</span>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li><p><strong>R&D Projects</strong></p></li>
+            <li>
+                <a href="research.html">
+                    <i class="fas fa-project-diagram"></i>
+                    <span class="nav-text">Research & Prototyping</span>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li><p><strong>Professional</strong></p></li>
+            <li>
+                <a href="industrial.html">
+                    <i class="fas fa-industry"></i>
+                    <span class="nav-text">Industrial Exp.</span>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li><p><strong>Leadership</strong></p></li>
+            <li>
+                <a href="leadership.html">
+                    <i class="fas fa-users"></i>
+                    <span class="nav-text">Community & Teaching</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <main>
+        <div class="error-page">
+            <div class="error-code">404</div>
+            <div class="error-icon"><i class="fas fa-robot"></i></div>
+            <h1>Lost in the swarm</h1>
+            <p>The page you're looking for doesn't exist — or the robot wandered off the map.</p>
+            <div class="error-nav">
+                <a href="index.html" class="download-btn">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="research.html" class="download-btn download-btn--outline">
+                    <i class="fas fa-flask"></i> View Research
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="animations.js"></script>
+</body>
+</html>

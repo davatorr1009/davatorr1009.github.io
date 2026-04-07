@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://davatorr1009.github.io/sitemap.xml
