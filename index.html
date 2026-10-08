@@ -3,396 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Torres | Swarm Robotics Researcher</title>
-    <meta name="description" content="David Torres — Mechatronics Engineer and Swarm Robotics Researcher at CoRAL Lab, ESPOL. Autonomous systems, ROS 2, swarm intelligence, industrial automation. Seeking graduate opportunities in robotics.">
-    <meta property="og:title" content="David Torres | Swarm Robotics Researcher">
-    <meta property="og:description" content="Portfolio: swarm robotic manipulation, autonomous navigation (RISE Lab/SKKU), industrial automation. CoRAL Lab, ESPOL.">
-    <meta property="og:image" content="https://davatorr1009.github.io/assets/img/profile.jpeg">
+    <title>David Torres · Swarm Robotics</title>
+    <meta name="description" content="David Torres, mechatronics engineer at CoRAL Lab (ESPOL). Swarm robot hardware, collective manipulation, autonomous navigation. Seeking a PhD position in swarm and multi-robot systems.">
+    <meta property="og:title" content="David Torres · Swarm Robotics">
+    <meta property="og:description" content="Mechatronics engineer building swarm robots end to end at CoRAL Lab, ESPOL. Seeking a PhD in multi-robot systems.">
+    <meta property="og:image" content="https://davatorr1009.github.io/assets/img/qupa_leds.jpg">
     <meta property="og:url" content="https://davatorr1009.github.io/">
     <meta property="og:type" content="website">
+    <meta name="theme-color" content="#f4f5f6" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0e1012" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="https://davatorr1009.github.io/">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%23003366'/><text x='50' y='68' font-size='48' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>DT</text></svg>">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111316'/><circle cx='50' cy='50' r='16' fill='%23e8590c'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="style.css?v=20261008">
+    <script>
+        // Apply the saved theme before first paint to avoid a flash.
+        try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+    </script>
 </head>
 <body>
-    <aside class="sidebar">
-        <ul>
-            <li>
-                <a href="index.html" class="active">
-                    <i class="fas fa-home"></i>
-                    <span class="nav-text">Home</span>
-                </a>
-            </li>
-        </ul>
-        
-        <ul>
-            <li><p><strong>R&D Projects</strong></p></li> <li>
-                <a href="research.html">
-                    <i class="fas fa-project-diagram"></i> <span class="nav-text">Research & Prototyping</span>
-                </a>
-            </li>
-        </ul>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        <ul>
-            <li><p><strong>Professional</strong></p></li>
-            <li>
-                <a href="industrial.html">
-                    <i class="fas fa-industry"></i>
-                    <span class="nav-text">Industrial Exp.</span>
-                </a>
-            </li>
-        </ul>
-
-        <ul>
-            <li><p><strong>Leadership</strong></p></li>
-            <li>
-                <a href="leadership.html">
-                    <i class="fas fa-users"></i> <span class="nav-text">Community & Teaching</span>
-                </a>
-            </li>
-        </ul>
-    </aside>
-
-    <header class="logo-background">
-        <section class="tech-stack container">
-            <div class="logo-grid">
-                <div class="logo-item"><img src="assets/img/ROS-logo.png" alt="ROS 2"></div> 
-                <div class="logo-item"><img src="assets/img/Siemens-logo.png" alt="Siemens"></div>
-                <div class="logo-item"><img src="assets/img/python-logo.png" alt="Python"></div>
-                <div class="logo-item"><img src="assets/img/nvidia-logo.png" alt="NVIDIA"></div>
-                <div class="logo-item"><img src="assets/img/gazebo-logo.png" alt="Gazebo"></div>
-                <div class="logo-item"><i class="fas fa-code"></i></div>
-            </div>
-        </section>
+    <header class="site-nav" id="top">
+        <div class="wrap nav-inner">
+            <a class="nav-name" href="#top">David Torres</a>
+            <nav aria-label="Sections">
+                <ul class="nav-links">
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" type="button" aria-label="Switch color theme">
+                <i class="ph ph-moon" aria-hidden="true"></i>
+            </button>
+        </div>
     </header>
 
-    <main>
-        <div class="homepage-layout">
-        <section id="intro">
-            
-        <div class="profile-wrapper hero-fadein">
-            <div class="profile-image">
-                <img src="assets/img/profile.jpg" alt="David Torres — Swarm Robotics Researcher, ESPOL" class="photo" loading="eager">
-            </div>
+    <main id="main">
 
-            <div class="profile-content">
-                <h1>David Alejandro Torres Torres</h1>
-                <p class="tagline">Mechatronics Engineer &nbsp;·&nbsp; Swarm Robotics (CoRAL Lab / ESPOL) &nbsp;·&nbsp; International Research Collaborations<br>
-                <span style="font-size: 0.9em; font-style: italic; color: var(--text-dark);" data-type="Seeking graduate opportunities in autonomous systems &amp; bio-inspired robotics"></span></p>
-                
-                <div class="about-me">
-                    <h3 class="section-title">About Me</h3>
-                    <p>
-                        Mechatronics Engineer and researcher at <strong>CoRAL Lab (ESPOL)</strong>, focused on swarm robotics and decentralized collective behavior. I build simulation-to-real pipelines, collaborate internationally, and bring hands-on industrial automation experience — all driven by a long-term vision of seamless human-robot coexistence.
-                    </p>
-                    <ul class="about-bullets">
-                        <li><i class="fas fa-flask"></i> Swarm robotics research — CoRAL Lab / ESPOL</li>
-                        <li><i class="fas fa-globe"></i> International collaborations — UCD (Ireland) &amp; SKKU (South Korea)</li>
-                        <li><i class="fas fa-industry"></i> Industrial automation — PLC, HMI, embedded systems</li>
-                        <li><i class="fas fa-graduation-cap"></i> Lab Technician &amp; Teaching Assistant — mobile &amp; articulated robotics</li>
-                    </ul>
+        <!-- ───────── Hero ───────── -->
+        <section class="hero wrap">
+            <div class="hero-text">
+                <h1>David Torres</h1>
+                <p class="hero-lead">Mechatronics engineer building swarm robots end to end at CoRAL Lab, ESPOL. Seeking a PhD in multi-robot systems.</p>
+                <div class="actions">
+                    <a class="btn btn-primary" href="mailto:davatorr@espol.edu.ec"><i class="ph ph-envelope-simple" aria-hidden="true"></i>Email me</a>
+                    <a class="btn btn-ghost" href="#research">See research</a>
                 </div>
             </div>
-        </div>
-
-            
-        <div class="research-collaboration content-box">
-            <h3 class="section-title"><i class="fas fa-globe-americas"></i> Research and International Collaboration</h3>
-            
-            <div class="news-grid">
-                
-                <div class="news-item">
-                    <h4 style="color: var(--primary-accent); margin-bottom: 10px;">
-                        <i class="fas fa-cubes"></i> Bio-Inspired Swarm
-                    </h4>
-                    <p style="font-size: 0.9rem;">
-                        Collaborated under the supervision of <strong>Ph.D. Christian Tutiven</strong> (CoRAL Lab) and <strong>Ph.D. David Garzon Ramos</strong> (UCD) in the design of a modular robotic actuator and decentralized behaviors for collective manipulation.
-                    </p>
-                </div>
-
-                <div class="news-item">
-                    <h4 style="color: var(--primary-accent); margin-bottom: 10px;">
-                        <i class="fas fa-route"></i> Navigation Pipelines
-                    </h4>
-                    <p style="font-size: 0.9rem;">
-                        Worked with <strong>Ph.D. Nabih Pico</strong> at <strong>SKKU (South Korea)</strong> within the RISE Lab to develop and benchmark Nav2-based architectures and perception pipelines using LiDAR and depth cameras.
-                    </p>
-                </div>
-
-                <div class="news-item">
-                    <h4 style="color: var(--primary-accent); margin-bottom: 10px;">
-                        <i class="fas fa-project-diagram"></i> Multi-Fidelity Sim
-                    </h4>
-                    <p style="font-size: 0.9rem;">
-                        Deep knowledge in building simulation-to-control infrastructures using <strong>ARGoS</strong> for large-scale swarm experiments and <strong>ROS/Gazebo</strong> for physically grounded robot embodiment.
-                    </p>
-                </div>
-
-                <div class="news-item">
-                    <h4 style="color: var(--primary-accent); margin-bottom: 10px;">
-                        <i class="fas fa-tools"></i> Core Competencies
-                    </h4>
-                    <p style="font-size: 0.9rem;">
-                        Through these international projects, I have mastered rapid prototyping (3D printing), complex system simulation, and cross-border teamwork.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-
-            <div class="cv-wrapper">
-                <a href="assets/docs/DT_CV.pdf" class="download-btn" target="_blank">
-                    <i class="fas fa-file-pdf"></i> Download CV
-                </a>
-                <a href="research.html" class="download-btn download-btn--outline">
-                    <i class="fas fa-flask"></i> View Research
-                </a>
-            </div>
-
-            <div class="content-box" style="margin-bottom: 30px;">
-                <h3 class="section-title"><i class="fas fa-flask"></i> Research Interests</h3>
-                <div class="news-grid">
-                    <div class="news-item">
-                        <h4 style="color: var(--primary-accent); margin-bottom: 10px;"><i class="fas fa-robot"></i> Swarm Intelligence</h4>
-                        <p style="font-size: 0.9rem;">Decentralized multi-agent coordination for collective manipulation and construction-oriented tasks. Bio-inspired emergent behaviors without central control.</p>
-                    </div>
-                    <div class="news-item">
-                        <h4 style="color: var(--primary-accent); margin-bottom: 10px;"><i class="fas fa-map-marked-alt"></i> Autonomous Navigation</h4>
-                        <p style="font-size: 0.9rem;">SLAM-based localization, Nav2 architectures, and benchmarking local planners (MPC, MPPI, DWA) for navigation in dynamic, unstructured environments.</p>
-                    </div>
-                    <div class="news-item">
-                        <h4 style="color: var(--primary-accent); margin-bottom: 10px;"><i class="fas fa-brain"></i> Sim-to-Real Transfer</h4>
-                        <p style="font-size: 0.9rem;">Multi-fidelity simulation pipelines (ARGoS + Gazebo/ROS) to validate robot behaviors before physical deployment.</p>
-                    </div>
-                    <div class="news-item">
-                        <h4 style="color: var(--primary-accent); margin-bottom: 10px;"><i class="fas fa-link"></i> Cyber-Physical Systems</h4>
-                        <p style="font-size: 0.9rem;">Bridging research robotics and industrial automation — IIoT, PLC integration, and safety-critical system design.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-box" style="margin-bottom: 30px;">
-                <h3 class="section-title"><i class="fas fa-book-open"></i> Publications &amp; IP</h3>
-
-                <div class="news-item highlight" style="margin-top: 15px;">
-                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px;">
-                        <h4 style="color: var(--primary-accent); margin: 0;">
-                            <i class="fas fa-lock"></i>&nbsp; Modular Robotic Platform and Manipulation System for Swarm Construction Robots
-                        </h4>
-                        <span style="font-size:0.8rem; background:var(--primary-accent); color:#fff; padding:2px 10px; border-radius:20px; white-space:nowrap;">IP Filing · 2025</span>
-                    </div>
-                    <p style="font-size: 0.9rem; margin-top: 10px;">
-                        Co-inventor on a swarm robotic platform designed for collective manipulation and construction tasks. Primary contributions focused on the <strong>mechanical design and CAD modeling of the robot base</strong> — structural layout, component integration, and overall system architecture of the mobile platform.
-                    </p>
-                    <p style="font-size: 0.8rem; color: var(--text-dark); margin-top: 6px;"><i class="fas fa-building"></i>&nbsp; CoRAL Lab, ESPOL &nbsp;·&nbsp; <em>Industrial secret — filing stage</em></p>
-                </div>
-
-                <div class="news-item" style="margin-top: 12px;">
-                    <h4 style="color: var(--primary-accent); margin-bottom: 6px;">
-                        <i class="fas fa-hourglass-half"></i>&nbsp; Thesis Manuscript
-                    </h4>
-                    <p style="font-size: 0.9rem;">
-                        <em>"Swarm Robotic Manipulation and Collective Transport for Construction-Oriented Tasks"</em> — B.Sc. thesis, ESPOL 2025. Manuscript in preparation for journal submission.
-                    </p>
-                    <p style="font-size: 0.8rem; color: var(--text-dark); margin-top: 6px;"><i class="fas fa-users"></i>&nbsp; Supervisors: Dr. Christian Tutiven (CoRAL/ESPOL) &amp; Prof. David Garzón Ramos (UCD, Ireland)</p>
-                </div>
-
-                <p style="font-size: 0.82rem; color: #aaa; margin-top: 12px;">Additional papers and preprints will appear here as they become available.</p>
-            </div>
-
-            <div class="news-section">
-                <h3 class="section-title"><i class="fas fa-newspaper"></i> Latest News & Updates</h3>
-                <div class="news-grid">
-                    <div class="news-item">
-                        <span class="news-date">2025</span>
-                        <p><strong>Thesis Defense:</strong> Completed research on "Swarm Robotic Manipulation for Construction-Oriented Tasks".</p>
-                    </div>
-                    <div class="news-item highlight">
-                        <span class="news-date">2025</span>
-                        <p><strong>🏆 1st Place - Roboracer Ecuador:</strong> Led the winning autonomous racing team representing ESPOL/AIROS.</p>
-                    </div>
-                    <div class="news-item">
-                        <span class="news-date">2025</span>
-                        <p><strong>Industry Training:</strong> Completed the Holcim Innovation Chair program on management and sustainability.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="content-box" style="margin-bottom: 30px;">
-                <h3 class="section-title"><i class="fas fa-compass"></i> Beyond the Lab</h3>
-                <div class="hobbies-grid">
-
-                    <div class="hobby-card hobby-card--portrait">
-                        <div class="hobby-img-wrapper">
-                            <img src="assets/img/hobbies/futbol2.JPG" alt="Football team photo" loading="lazy">
-                        </div>
-                        <div class="hobby-body">
-                            <h4><i class="fas fa-futbol"></i> Football</h4>
-                            <p>Champions of the Unidad Educativa Javier alumni tournament. A practice in team coordination, quick decision-making, and collective dynamics.</p>
-                        </div>
-                    </div>
-
-                    <div class="hobby-card hobby-card--landscape">
-                        <div class="hobby-img-wrapper">
-                            <div class="hobby-slider" id="hobby-trekking">
-                                <img src="assets/img/hobbies/trekking2.jpg" alt="Sunset above the clouds" loading="lazy">
-                                <img src="assets/img/hobbies/trekking.jpg"  alt="Trekking in Ecuador highlands" loading="lazy" style="object-position: center 60%;">
-                            </div>
-                            <button class="slider-btn slider-btn--prev" onclick="hobbySlide('hobby-trekking',-1)">&#8249;</button>
-                            <button class="slider-btn slider-btn--next" onclick="hobbySlide('hobby-trekking', 1)">&#8250;</button>
-                        </div>
-                        <div class="hobby-body">
-                            <h4><i class="fas fa-mountain"></i> Trekking & Hiking</h4>
-                            <p>High-altitude routes in the Ecuadorian Andes. Drawn to the methodical challenge of summit approaches — patience, preparation, and incremental progress under uncertainty.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
+            <figure class="hero-media">
+                <img src="assets/img/qupa_leds.jpg" alt="Three QUPA swarm robots on a table, their domes lit in different LED colours" width="2066" height="3672" fetchpriority="high">
+                <figcaption>QUPA swarm robots during an LED signalling test, CoRAL Lab.</figcaption>
+            </figure>
         </section>
 
-        <!-- Right sticky panel -->
-        <aside class="right-panel">
-
-            <div class="right-panel-card">
-                <h4><i class="fas fa-code"></i> &nbsp;Skills</h4>
-
-                <div class="skill-category">
-                    <div class="skill-category-label">Robotics & Simulation</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">ROS 2</span>
-                        <span class="skill-tag">ARGoS</span>
-                        <span class="skill-tag">Gazebo</span>
-                        <span class="skill-tag">Nav2</span>
-                        <span class="skill-tag">RViz</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-label">Programming</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">Lua</span>
-                        <span class="skill-tag">MATLAB</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-label">Industrial</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">TIA Portal</span>
-                        <span class="skill-tag">Modbus TCP</span>
-                        <span class="skill-tag">Profinet</span>
-                        <span class="skill-tag">HMI/SCADA</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-label">Hardware & Sensors</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">LiDAR</span>
-                        <span class="skill-tag">Depth Cameras</span>
-                        <span class="skill-tag">Raspberry Pi</span>
-                        <span class="skill-tag">Arduino</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-label">CAD & Design</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SolidWorks</span>
-                        <span class="skill-tag">Fusion 360</span>
-                        <span class="skill-tag">Inventor</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-label">Electronics Design</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Proteus</span>
-                        <span class="skill-tag">EasyEDA</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <div class="skill-category-label">Tools</div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">Docker</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="right-panel-card">
-                <h4><i class="fas fa-paper-plane"></i> &nbsp;Contact</h4>
-                <div class="contact-links">
-                    <a href="mailto:davatorr@espol.edu.ec" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>davatorr@espol.edu.ec</span>
-                    </a>
-                    <a href="https://linkedin.com/in/davatorr" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin-in"></i>
-                        <span>linkedin.com/in/davatorr</span>
-                    </a>
-                    <a href="https://github.com/davatorr1009" target="_blank" class="contact-link">
-                        <i class="fab fa-github"></i>
-                        <span>github.com/davatorr1009</span>
-                    </a>
-                    <div class="contact-link" style="cursor: default;">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Guayaquil, Ecuador</span>
-                    </div>
-                </div>
-            </div>
-
-        </aside>
-
-        </div><!-- /.homepage-layout -->
-    </main>
-
-    <footer class="main-footer">
-        <div class="container footer-content">
-            
-            <div class="footer-brand">
-                <h3>David Torres</h3>
-                <p>Mechatronics Engineer | Researcher</p>
-                <p class="footer-location"><i class="fas fa-map-marker-alt"></i> Guayaquil, Ecuador</p>
-            </div>
-
-            <div class="footer-social">
-                <a href="https://linkedin.com/in/davatorr" target="_blank" class="social-icon" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/davatorr1009" target="_blank" class="social-icon" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:davatorr@espol.edu.ec" target="_blank" class="social-icon" title="Email Me">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-
+        <div class="wrap">
+            <ul class="affiliations" aria-label="Affiliations">
+                <li><strong>CoRAL Lab</strong> ESPOL, Ecuador</li>
+                <li><strong>University College Dublin</strong> collaboration, Ireland</li>
+                <li><strong>RISE Lab</strong> SKKU, with HD Hyundai Robotics, South Korea</li>
+            </ul>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 David Torres. All rights reserved.</p>
+        <!-- ───────── About ───────── -->
+        <section class="section wrap about" id="about" aria-labelledby="about-title">
+            <img class="about-photo" src="assets/img/profile.jpg" alt="Portrait of David Torres" width="960" height="1280" loading="lazy">
+            <div class="about-body">
+                <h2 id="about-title">About</h2>
+                <p>I'm a mechatronics engineer from Guayaquil, Ecuador (B.Sc., ESPOL 2025). Most of my work sits where hardware meets collective behaviour: designing robots that are cheap and reliable enough to be built in numbers, and the simulation tools to test them before they are.</p>
+                <p>I want to spend a PhD learning to design, and experimentally validate, the behaviours that make robot swarms useful outside the lab.</p>
+                <dl class="interests">
+                    <dt>Interests</dt>
+                    <dd>Swarm robotics and collective behaviour</dd>
+                    <dd>Collective manipulation and transport</dd>
+                    <dd>Hardware for multi-robot research</dd>
+                    <dd>Autonomous navigation</dd>
+                </dl>
+            </div>
+        </section>
+
+        <!-- ───────── Publications ───────── -->
+        <section class="section wrap" id="publications" aria-labelledby="pub-title">
+            <h2 id="pub-title">Publications</h2>
+
+            <article class="paper-feature">
+                <div class="paper-text">
+                    <p class="paper-venue"><a href="https://robot2026.upc.edu/" target="_blank" rel="noopener">ROBOT 2026</a> · 9th Iberian Robotics Conference, Barcelona · Accepted</p>
+                    <h3 class="paper-title">Learn alone or learn together? A minimal model of social learning in robot swarms</h3>
+                    <p class="paper-authors">G. Madroñero Pachajoa*, <b>D. Torres Torres*</b>, A. Tutivén Gálvez, J. Santos Terán, C. Samaniego Torres, P. S. Padrón Martínez, B. Puruncajas, C. Tutivén Gálvez, C. Saldarriaga, D. Garzón Ramos <span class="equal">*Equal contribution</span></p>
+                    <p class="paper-abstract">We extend a minimal task-allocation model so that each robot improves not only by repeating a task, but also by watching nearby peers perform it. With eight QUPA robots, physical and simulated in ARGoS, social learning increased the number of tasks the swarm completed.</p>
+                    <p class="paper-role">My part: I was responsible for the physical-robot experiments, validating the model in the real world with a swarm of eight QUPA robots.</p>
+                    <div class="actions">
+                        <a class="btn btn-ghost btn-sm" href="https://dgarzonramos.com/supp/MadTorTut2026robot.html" target="_blank" rel="noopener">Videos, code &amp; data <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                    </div>
+                    <p class="paper-note">Camera-ready version coming soon.</p>
+                </div>
+                <figure class="paper-figure">
+                    <img src="assets/img/paper/arena_real.jpg" alt="Top view of the physical arena: eight QUPA robots among yellow and pink task patches, their LEDs lit green or blue" width="1043" height="782" loading="lazy">
+                    <figcaption>Eight QUPA robots in the physical arena. Each robot's LEDs signal the type of task it is executing.</figcaption>
+                </figure>
+            </article>
+
+            <ol class="pub-list">
+                <li>
+                    <span class="pub-year">2025</span>
+                    <div>
+                        <p class="pub-title">Modular Robotic Platform and Manipulation System for Swarm Construction Robots</p>
+                        <p class="pub-meta">Intellectual property, CoRAL Lab, ESPOL. Co-inventor: design of the robot's iterations after the first prototype and of its manipulation actuators. Filing in progress.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="pub-year">2025</span>
+                    <div>
+                        <p class="pub-title">Swarm Robotic Manipulation and Collective Transport for Construction-Oriented Tasks</p>
+                        <p class="pub-meta">B.Sc. thesis, ESPOL. Supervised by Dr. Christian Tutiven (ESPOL) and Prof. David Garzón Ramos (UCD). Journal manuscript in preparation.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ───────── Research ───────── -->
+        <section class="section wrap" id="research" aria-labelledby="research-title">
+            <h2 id="research-title">Research</h2>
+
+            <!-- Project 0: QUPA, grouped by discipline -->
+            <article class="project project-qupa">
+                <div class="qupa-intro">
+                    <header class="project-head">
+                        <h3>The QUPA swarm robot</h3>
+                        <p class="project-meta">CoRAL Lab, ESPOL · 2024–now</p>
+                    </header>
+                    <div class="prose">
+                        <p>QUPA is CoRAL's low-cost robot for swarm robotics research and the platform of our social-learning paper. I worked on every iteration after the first prototype: the main board in EasyEDA, review of the mechanical design and its SolidWorks documentation, and now its omnidirectional vision.</p>
+                        <p class="stack">SolidWorks · EasyEDA · 2-layer PCB · ROS 2 · Blender · FreeRTOS</p>
+                    </div>
+                </div>
+
+                <section class="qupa-group" aria-labelledby="qupa-mech">
+                    <h4 id="qupa-mech">Mechanical design</h4>
+                    <div class="pair">
+                        <figure class="sheet">
+                            <a href="assets/img/design/qupa-exploded.png" target="_blank"><img src="assets/img/design/qupa-exploded.png" alt="Exploded assembly drawing of the QUPA robot with numbered parts" width="1800" height="1273" loading="lazy"></a>
+                            <figcaption>Exploded assembly of QUPA with its 22 numbered parts.</figcaption>
+                        </figure>
+                        <figure class="sheet">
+                            <a href="assets/img/design/qupa-turret.png" target="_blank"><img src="assets/img/design/qupa-turret.png" alt="Assembly drawing of QUPA's omnidirectional vision turret: camera, supports and hyperbolic mirror" width="1800" height="1273" loading="lazy"></a>
+                            <figcaption>Vision turret: camera, supports and hyperbolic mirror, with assembly steps.</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section class="qupa-group" aria-labelledby="qupa-elec">
+                    <h4 id="qupa-elec">Electronics</h4>
+                    <div class="pair">
+                        <figure class="sheet sheet-dark">
+                            <a href="assets/img/design/pcb-render.png" target="_blank"><img src="assets/img/design/pcb-render.png" alt="3D render of a round blue two-layer PCB for the QUPA robot" width="685" height="497" loading="lazy"></a>
+                            <figcaption>3D render of an earlier revision of QUPA's main board.</figcaption>
+                        </figure>
+                        <figure class="sheet sheet-dark">
+                            <a href="assets/img/design/pcb-layout.png" target="_blank"><img src="assets/img/design/pcb-layout.png" alt="PCB layout of the same board showing top and bottom copper layers" width="914" height="710" loading="lazy"></a>
+                            <figcaption>Layout of the same revision: top (red) and bottom (blue) copper.</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section class="qupa-group" aria-labelledby="qupa-vision">
+                    <h4 id="qupa-vision">Omnidirectional vision <span>in progress</span></h4>
+                    <p class="group-text">I stream the camera over ROS&nbsp;2 on the robot's headless Ubuntu Server, and I am improving the mirror so that more of the image shows the arena. Starting from a real capture of the current mirror, I use ray-traced Blender renders to compare profiles: the current hyperbolic mirror (A), a spherical one (B) and a custom profile (C), which devotes far more of the image to neighbouring robots.</p>
+                    <div class="vision-row vision-row-1">
+                        <figure>
+                            <a href="assets/img/design/mirror-real.jpg" target="_blank"><img src="assets/img/design/mirror-real.jpg" alt="Photo through QUPA's camera of the current hyperbolic mirror, slightly underexposed" width="640" height="480" loading="lazy"></a>
+                            <figcaption>1 · The current mirror at full camera resolution (Radxa board, low exposure): the starting point.</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/img/opt/real-vs-sim.jpg" target="_blank"><img src="assets/img/opt/real-vs-sim.jpg" alt="Real mirror photo next to the simulated camera view" width="1600" height="769" loading="lazy"></a>
+                            <figcaption>2 · Real mirror (left) next to the simulated camera view (right).</figcaption>
+                        </figure>
+                    </div>
+                    <div class="vision-row vision-row-2">
+                        <figure>
+                            <a href="assets/img/design/mirror-arena.jpg" target="_blank"><img src="assets/img/design/mirror-arena.jpg" alt="Blender render of a white arena with seven coloured QUPA robots" width="640" height="480" loading="lazy"></a>
+                            <figcaption>3 · Test scene in Blender: one robot and six neighbours.</figcaption>
+                        </figure>
+                        <figure>
+                            <a href="assets/img/design/mirror-compare-abc.jpg" target="_blank"><img src="assets/img/design/mirror-compare-abc.jpg" alt="Camera views through three mirrors: A current hyperbolic, B spherical, C custom profile where neighbouring robots appear much larger" width="1920" height="480" loading="lazy"></a>
+                            <figcaption>4 · What the camera sees through mirror A (current), B (spherical) and C (custom profile).</figcaption>
+                        </figure>
+                    </div>
+                    <a class="text-link" href="https://github.com/davatorr1009/arena_sim" target="_blank" rel="noopener">Mirror simulation in Blender <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                </section>
+            </article>
+
+            <!-- Project 1: full-width feature -->
+            <article class="project project-feature">
+                <header class="project-head">
+                    <h3>Swarm robotic manipulation</h3>
+                    <p class="project-meta">B.Sc. thesis · CoRAL Lab, ESPOL · 2024–2025</p>
+                </header>
+                <div class="project-cols">
+                    <div class="prose">
+                        <p>I designed a five-bar parallel SCARA manipulator for QUPA, CoRAL's differential-drive swarm robot, so that several robots can pick up and carry objects together. The work covered the mechanism, a modular electronics board, vision-based object detection and the integration with the robot, all fabricated by additive manufacturing.</p>
+                        <p class="status"><i class="ph ph-info" aria-hidden="true"></i>All results below come from simulation; testing with multiple physical robots is the next step.</p>
+                        <dl class="data-row" aria-label="Simulation results">
+                            <div><dt>Grasp success</dt><dd>96%</dd></div>
+                            <div><dt>Positioning</dt><dd>±4 mm</dd></div>
+                            <div><dt>Autonomy, max load</dt><dd>106 min</dd></div>
+                            <div><dt>Task time, 3 robots vs 1</dt><dd>−58.5%</dd></div>
+                        </dl>
+                        <p class="stack">ROS Noetic · Python · C++ · OpenCV · ARGoS · Gazebo</p>
+                        <a class="text-link" href="https://github.com/coral-espol/qupa_gazebo" target="_blank" rel="noopener">Simulation repository <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                    </div>
+                    <figure class="video">
+                        <video controls playsinline preload="none" poster="assets/img/Qupa_sim.png">
+                            <source src="assets/videos/qupa_collective.mp4" type="video/mp4">
+                        </video>
+                        <figcaption>Collective behaviour of QUPA robots in simulation.</figcaption>
+                    </figure>
+                </div>
+                <ul class="filmstrip" aria-label="From design to hardware">
+                    <li><a href="assets/img/module%203D.png" target="_blank"><img src="assets/img/module 3D.png" alt="CAD of the manipulation module with electronics and battery" loading="lazy"></a><span>1 · Manipulation module in CAD</span></li>
+                    <li><a href="assets/img/opt/qupa-arm.jpg" target="_blank"><img src="assets/img/opt/qupa-arm.jpg" alt="Assembled QUPA robot with its arm holding a disc" loading="lazy"></a><span>2 · Assembled prototype holding a disc</span></li>
+                    <li><a href="assets/img/Test_real.jpg" target="_blank"><img src="assets/img/Test_real.jpg" alt="QUPA robot in a test arena with red and blue target discs" loading="lazy"></a><span>3 · Test arena with target discs</span></li>
+                </ul>
+            </article>
+
+            <!-- Project 2: split -->
+            <article class="project project-split">
+                <figure class="video">
+                    <video controls playsinline preload="none" poster="assets/img/opt/nav-scenario1.jpg">
+                        <source src="assets/videos/navigation.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Navigation among moving people in Gazebo.</figcaption>
+                </figure>
+                <div class="prose">
+                    <header class="project-head">
+                        <h3>Navigation among people</h3>
+                        <p class="project-meta">Research internship (remote) · RISE Lab, Sungkyunkwan University, with HD Hyundai Robotics · 2024</p>
+                    </header>
+                    <p>In a project with HD Hyundai Robotics and under Prof. Nabih Pico, I built a ROS&nbsp;2 and Gazebo pipeline to test mobile-robot navigation in scenes with moving people: SLAM and AMCL localisation, a Nav2 stack, and a benchmark of local controllers (DWA, MPC, MPPI and learning-based variants) across five scenarios.</p>
+                    <p class="stack">ROS Noetic · ROS 2 Humble · Gazebo Classic &amp; Fortress · Python · C++</p>
+                </div>
+            </article>
+
+            <!-- Project 3: mosaic -->
+            <article class="project project-mosaic">
+                <div class="prose">
+                    <header class="project-head">
+                        <h3>Autonomous racing</h3>
+                        <p class="project-meta">Roboracer Ecuador · 1st place · 2025</p>
+                    </header>
+                    <p>I led ESPOL's AIRoS team to first place in Roboracer Ecuador, racing 1/10-scale autonomous cars built on a Jetson Orin Nano, a 2D LiDAR and a VESC motor controller. A second AIRoS team finished second.</p>
+                    <p>I worked on the full autonomy stack (mapping, localisation, path planning and control) and coordinated the team's hardware work.</p>
+                </div>
+                <figure class="mosaic-team">
+                    <a href="assets/img/airos/race2.jpeg" target="_blank"><img src="assets/img/airos/race2.jpeg" alt="The AIRoS team with their medals, the race car and a Jetson Orin Nano box at the Roboracer Ecuador 2025 awards" width="1280" height="960" loading="lazy"></a>
+                    <figcaption>The AIRoS team at the Roboracer Ecuador 2025 awards.</figcaption>
+                </figure>
+                <figure class="mosaic-car mosaic-video">
+                    <video controls playsinline muted preload="metadata" data-speed="2">
+                        <source src="assets/img/airos/race.mp4#t=0.1" type="video/mp4">
+                    </video>
+                    <figcaption>A run on the Roboracer Ecuador track, played at 2× speed.</figcaption>
+                </figure>
+                <figure class="mosaic-map">
+                    <a href="assets/img/airos/planning.png" target="_blank"><img src="assets/img/airos/planning.png" alt="SLAM map of the race track with planned and driven trajectories" width="918" height="603" loading="lazy"></a>
+                    <figcaption>Track map with planned (red) and driven (green) paths.</figcaption>
+                </figure>
+                <figure class="mosaic-track">
+                    <a href="assets/img/airos/race5.png" target="_blank"><img src="assets/img/airos/race5.png" alt="Path tracking view with look-ahead points and LiDAR returns" width="762" height="495" loading="lazy"></a>
+                    <figcaption>Path tracking with look-ahead points and LiDAR scan.</figcaption>
+                </figure>
+            </article>
+
+            <!-- Smaller projects: list -->
+            <h3 class="list-title">Other projects</h3>
+            <ul class="mini-projects">
+                <li>
+                    <img src="assets/img/opt/prosthesis.jpg" alt="3D-printed upper-limb prosthesis" loading="lazy">
+                    <div>
+                        <p class="mini-title">Upper-limb prosthesis <span>2024</span></p>
+                        <p>Low-cost prosthesis designed in Fusion 360 and 3D-printed in PLA+ and PETG, delivered to a patient who lost an arm in a workplace accident.</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="assets/img/proyectos/turtlebot_marker_3d.png" alt="TurtleBot3 with a marker attachment" loading="lazy">
+                    <div>
+                        <p class="mini-title">Floor-plan drawing robot <span>ESPOL</span></p>
+                        <p>Force-controlled marker attachment for a TurtleBot3, with a PID loop designed in Simulink and deployed on Arduino. 90% drawing success.</p>
+                        <p class="mini-links"><a class="text-link" href="assets/docs/dimeca.pdf" target="_blank">Report</a><a class="text-link" href="assets/videos/dimeca.mp4" target="_blank">Video</a></p>
+                    </div>
+                </li>
+                <li>
+                    <img src="assets/img/proyectos/robot_leg_3d.png" alt="CAD of a two-link quadruped leg on a test base" loading="lazy">
+                    <div>
+                        <p class="mini-title">Impedance control of a quadruped leg <span>2023</span></p>
+                        <p>Dynamic model of a 2R leg with friction, damping and ground contact in Simscape Multibody, used to tune stiffness and damping for compliant behaviour.</p>
+                        <p class="mini-links"><a class="text-link" href="assets/docs/Report_Robots.pdf" target="_blank">Report</a><a class="text-link" href="assets/videos/impedancia.mp4" target="_blank">Video</a></p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ───────── Experience ───────── -->
+        <section class="section wrap" id="experience" aria-labelledby="exp-title">
+            <h2 id="exp-title">Experience</h2>
+            <ol class="timeline">
+                <li>
+                    <span class="when">2026 – now</span>
+                    <div>
+                        <p class="role">Lab Technician <span>Bioengineering &amp; Unmanned Vehicles Lab, ESPOL</span></p>
+                        <p>Commissioning the new lab: sourcing LiDARs, depth cameras and controllers, setting up workstations, and writing safety protocols for LiPo storage and robot testing.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="when">2024 – now</span>
+                    <div>
+                        <p class="role">Research Assistant <span>CoRAL Lab, ESPOL · with UCD, Ireland</span></p>
+                        <p>Worked on every iteration of the QUPA swarm robot after the first prototype (electronics, mechanical design review, on-board software and omnidirectional vision) and on its manipulation actuators. Responsible for the physical-robot experiments of our social-learning paper: real-world validation with eight QUPA robots. Built the ROS&nbsp;1 simulators, URDF models and Gazebo plugins that became CoRAL's simulation infrastructure.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="when">2024 – 2025</span>
+                    <div>
+                        <p class="role">Teaching Assistant <span>Mobile and Articulated Robots, ESPOL</span></p>
+                        <p>Designed and ran lab sessions on mobile robots (Lego Mindstorms, Robotino, ROS) and ABB industrial arms (kinematics, motion planning).</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="when">2023 – 2025</span>
+                    <div>
+                        <p class="role">Automation Engineer, part-time <span>WG Selcon, Ecuador</span></p>
+                        <p>PLC-based automation (Siemens) for compressors, hydraulic rolling machines and power-factor correction: panel design, PLC and HMI software, drive integration, on-site commissioning.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="when">2024</span>
+                    <div>
+                        <p class="role">Research Intern, remote <span>RISE Lab, Sungkyunkwan University · project with HD Hyundai Robotics, South Korea</span></p>
+                        <p>Navigation benchmarking in ROS&nbsp;2 and Gazebo (see Research).</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="when">2025</span>
+                    <div>
+                        <p class="role">B.Sc. Mechatronics Engineering <span>ESPOL, Ecuador</span></p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ───────── Community ───────── -->
+        <section class="section wrap community" id="community" aria-labelledby="community-title">
+            <figure>
+                <img src="assets/img/airos/airos_group.jpg" alt="Members of the AIRoS student society holding the club's logo" width="1600" height="1200" loading="lazy">
+            </figure>
+            <div class="prose">
+                <h2 id="community-title">Community</h2>
+                <p>I co-founded AIRoS, ESPOL's student society for AI and robotics, and served as vice-president in 2024–2025. We trained undergraduates in ROS and autonomous navigation, organised talks with international PhD researchers at USFQ, ESPE and UCSG, and entered Roboracer Ecuador with two teams that took first and second place.</p>
+                <p>Members published three conference papers and two journal articles during that period. For this work I received the AIRoS/ESPOL Gold Recognition for student leadership in 2025.</p>
+            </div>
+        </section>
+
+        <!-- ───────── Contact ───────── -->
+        <section class="section wrap contact" id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+            <a class="contact-mail" href="mailto:davatorr@espol.edu.ec">davatorr@espol.edu.ec</a>
+            <ul class="contact-links">
+                <li><a href="https://linkedin.com/in/davatorr" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i>LinkedIn</a></li>
+                <li><a href="https://github.com/davatorr1009" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a></li>
+                <li><span><i class="ph ph-map-pin" aria-hidden="true"></i>Guayaquil, Ecuador</span></li>
+            </ul>
+            <p class="on-request">CV, ROS certification (ABK), TOEFL iBT report, RISE Lab internship certificate, Holcim Innovation Chair and AIRoS Gold Recognition are available on request.</p>
+        </section>
+
+    </main>
+
+    <footer class="wrap">
+        <div class="site-footer">
+            <p>© 2026 David Torres</p>
+            <p>Outside the lab: football and high-altitude trekking in the Andes.</p>
         </div>
     </footer>
 
-    <script src="animations.js"></script>
-    <script>
-        const hobbyState = {};
-        function hobbySlide(id, dir) {
-            const slider = document.getElementById(id);
-            const total = slider.querySelectorAll('img').length;
-            if (!hobbyState[id]) hobbyState[id] = 0;
-            hobbyState[id] = (hobbyState[id] + dir + total) % total;
-            slider.style.transform = `translateX(-${hobbyState[id] * 100}%)`;
-        }
-    </script>
+    <script src="main.js?v=20261008b"></script>
 </body>
 </html>
