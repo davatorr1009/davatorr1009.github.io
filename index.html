@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>David Torres · Swarm Robotics</title>
     <meta name="description" content="David Torres, mechatronics engineer at CoRAL Lab (ESPOL). Swarm robot hardware, collective manipulation, autonomous navigation. Seeking a PhD position in swarm and multi-robot systems.">
     <meta property="og:title" content="David Torres · Swarm Robotics">
@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
-    <link rel="stylesheet" href="style.css?v=20261008">
+    <link rel="stylesheet" href="style.css?v=20261011">
     <script>
         // Apply the saved theme before first paint to avoid a flash.
         try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -146,7 +146,7 @@
 
                 <section class="qupa-group" aria-labelledby="qupa-mech">
                     <h4 id="qupa-mech">Mechanical design</h4>
-                    <div class="pair">
+                    <div class="pair swipe">
                         <figure class="sheet">
                             <a href="assets/img/design/qupa-exploded.png" target="_blank"><img src="assets/img/design/qupa-exploded.png" alt="Exploded assembly drawing of the QUPA robot with numbered parts" width="1800" height="1273" loading="lazy"></a>
                             <figcaption>Exploded assembly of QUPA with its 22 numbered parts.</figcaption>
@@ -160,7 +160,7 @@
 
                 <section class="qupa-group" aria-labelledby="qupa-elec">
                     <h4 id="qupa-elec">Electronics</h4>
-                    <div class="pair">
+                    <div class="pair swipe">
                         <figure class="sheet sheet-dark">
                             <a href="assets/img/design/pcb-render.png" target="_blank"><img src="assets/img/design/pcb-render.png" alt="3D render of a round blue two-layer PCB for the QUPA robot" width="685" height="497" loading="lazy"></a>
                             <figcaption>3D render of an earlier revision of QUPA's main board.</figcaption>
@@ -175,7 +175,7 @@
                 <section class="qupa-group" aria-labelledby="qupa-vision">
                     <h4 id="qupa-vision">Omnidirectional vision <span>in progress</span></h4>
                     <p class="group-text">I stream the camera over ROS&nbsp;2 on the robot's headless Ubuntu Server, and I am improving the mirror so that more of the image shows the arena. Starting from a real capture of the current mirror, I use ray-traced Blender renders to compare profiles: the current hyperbolic mirror (A), a spherical one (B) and a custom profile (C), which devotes far more of the image to neighbouring robots.</p>
-                    <div class="vision-row vision-row-1">
+                    <div class="vision-row vision-row-1 swipe">
                         <figure>
                             <a href="assets/img/design/mirror-real.jpg" target="_blank"><img src="assets/img/design/mirror-real.jpg" alt="Photo through QUPA's camera of the current hyperbolic mirror, slightly underexposed" width="640" height="480" loading="lazy"></a>
                             <figcaption>1 · The current mirror at full camera resolution (Radxa board, low exposure): the starting point.</figcaption>
@@ -225,7 +225,7 @@
                         <figcaption>Collective behaviour of QUPA robots in simulation.</figcaption>
                     </figure>
                 </div>
-                <ul class="filmstrip" aria-label="From design to hardware">
+                <ul class="filmstrip swipe" aria-label="From design to hardware">
                     <li><a href="assets/img/module%203D.png" target="_blank"><img src="assets/img/module 3D.png" alt="CAD of the manipulation module with electronics and battery" loading="lazy"></a><span>1 · Manipulation module in CAD</span></li>
                     <li><a href="assets/img/opt/qupa-arm.jpg" target="_blank"><img src="assets/img/opt/qupa-arm.jpg" alt="Assembled QUPA robot with its arm holding a disc" loading="lazy"></a><span>2 · Assembled prototype holding a disc</span></li>
                     <li><a href="assets/img/Test_real.jpg" target="_blank"><img src="assets/img/Test_real.jpg" alt="QUPA robot in a test arena with red and blue target discs" loading="lazy"></a><span>3 · Test arena with target discs</span></li>
@@ -264,20 +264,22 @@
                     <a href="assets/img/airos/race2.jpeg" target="_blank"><img src="assets/img/airos/race2.jpeg" alt="The AIRoS team with their medals, the race car and a Jetson Orin Nano box at the Roboracer Ecuador 2025 awards" width="1280" height="960" loading="lazy"></a>
                     <figcaption>The AIRoS team at the Roboracer Ecuador 2025 awards.</figcaption>
                 </figure>
-                <figure class="mosaic-car mosaic-video">
-                    <video controls playsinline muted preload="metadata" data-speed="2">
-                        <source src="assets/img/airos/race.mp4#t=0.1" type="video/mp4">
-                    </video>
-                    <figcaption>A run on the Roboracer Ecuador track, played at 2× speed.</figcaption>
-                </figure>
-                <figure class="mosaic-map">
-                    <a href="assets/img/airos/planning.png" target="_blank"><img src="assets/img/airos/planning.png" alt="SLAM map of the race track with planned and driven trajectories" width="918" height="603" loading="lazy"></a>
-                    <figcaption>Track map with planned (red) and driven (green) paths.</figcaption>
-                </figure>
-                <figure class="mosaic-track">
-                    <a href="assets/img/airos/race5.png" target="_blank"><img src="assets/img/airos/race5.png" alt="Path tracking view with look-ahead points and LiDAR returns" width="762" height="495" loading="lazy"></a>
-                    <figcaption>Path tracking with look-ahead points and LiDAR scan.</figcaption>
-                </figure>
+                <div class="mosaic-strip swipe">
+                    <figure class="mosaic-video">
+                        <video controls playsinline muted preload="metadata" data-speed="2">
+                            <source src="assets/img/airos/race.mp4#t=0.1" type="video/mp4">
+                        </video>
+                        <figcaption>A run on the Roboracer Ecuador track, played at 2× speed.</figcaption>
+                    </figure>
+                    <figure class="mosaic-map">
+                        <a href="assets/img/airos/planning.png" target="_blank"><img src="assets/img/airos/planning.png" alt="SLAM map of the race track with planned and driven trajectories" width="918" height="603" loading="lazy"></a>
+                        <figcaption>Track map with planned (red) and driven (green) paths.</figcaption>
+                    </figure>
+                    <figure class="mosaic-track">
+                        <a href="assets/img/airos/race5.png" target="_blank"><img src="assets/img/airos/race5.png" alt="Path tracking view with look-ahead points and LiDAR returns" width="762" height="495" loading="lazy"></a>
+                        <figcaption>Path tracking with look-ahead points and LiDAR scan.</figcaption>
+                    </figure>
+                </div>
             </article>
 
             <!-- Smaller projects: list -->
@@ -390,6 +392,6 @@
         </div>
     </footer>
 
-    <script src="main.js?v=20261008b"></script>
+    <script src="main.js?v=20261011"></script>
 </body>
 </html>

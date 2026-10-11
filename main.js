@@ -121,6 +121,21 @@
         if (e.key === 'ArrowLeft' && group.length > 1) { e.preventDefault(); show(index - 1); }
         if (e.key === 'ArrowRight' && group.length > 1) { e.preventDefault(); show(index + 1); }
     });
+    // Touch: swipe left/right to change image, swipe down to close.
+    let touchStart = null;
+    dialog.addEventListener('touchstart', e => {
+        if (e.touches.length !== 1) { touchStart = null; return; }
+        touchStart = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }, { passive: true });
+    dialog.addEventListener('touchend', e => {
+        if (!touchStart) return;
+        const dx = e.changedTouches[0].clientX - touchStart.x;
+        const dy = e.changedTouches[0].clientY - touchStart.y;
+        touchStart = null;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5 && group.length > 1) show(dx < 0 ? index + 1 : index - 1);
+        else if (dy > 80 && dy > Math.abs(dx) * 1.5) dialog.close();
+    }, { passive: true });
+
     dialog.addEventListener('close', () => {
         img.removeAttribute('src');
         if (opener) opener.focus({ preventScroll: true });

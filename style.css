@@ -22,7 +22,7 @@
 
     --radius: 10px;
     --wrap: 1180px;
-    --gutter: clamp(16px, 4vw, 40px);
+    --gutter: max(clamp(16px, 4vw, 40px), env(safe-area-inset-left), env(safe-area-inset-right));
     --section-gap: clamp(72px, 10vw, 128px);
 
     --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -551,19 +551,16 @@ figcaption {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-areas:
         "text team team"
-        "car map track";
+        "strip strip strip";
     gap: 24px clamp(16px, 2.5vw, 28px);
 }
 .project-mosaic .prose { grid-area: text; align-self: center; padding-right: 8px; }
 .mosaic-team { grid-area: team; }
-.mosaic-car { grid-area: car; }
-.mosaic-map { grid-area: map; }
-.mosaic-track { grid-area: track; }
+.mosaic-strip { grid-area: strip; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: inherit; }
 .project-mosaic a { display: block; }
 .project-mosaic img { width: 100%; border-radius: var(--radius); }
 .mosaic-team img { aspect-ratio: 4 / 3; object-fit: cover; }
-.mosaic-car img, .mosaic-map img, .mosaic-track img { aspect-ratio: 4 / 3; }
-.mosaic-car img { object-fit: cover; object-position: center 40%; }
+.mosaic-map img, .mosaic-track img { aspect-ratio: 4 / 3; }
 .mosaic-video video { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; border-radius: var(--radius); background: #0b0c0e; }
 .mosaic-map img, .mosaic-track img { object-fit: contain; background: #bfbfbf; }
 
@@ -761,45 +758,70 @@ html:has(.lightbox[open]) { overflow: hidden; }
         grid-template-areas:
             "text text text"
             "team team team"
-            "car map track";
+            "strip strip strip";
     }
-
-    .filmstrip {
-        grid-template-columns: none;
-        grid-auto-flow: column;
-        grid-auto-columns: 42%;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 8px;
-    }
-    .filmstrip li { scroll-snap-align: start; }
 }
 
 @media (max-width: 720px) {
-    .qupa-intro, .pair, .vision-row-1, .vision-row-2 { grid-template-columns: minmax(0, 1fr); }
-    .hero { grid-template-columns: minmax(0, 1fr); align-items: start; }
+    .qupa-intro, .vision-row-2 { grid-template-columns: minmax(0, 1fr); }
+    .hero { grid-template-columns: minmax(0, 1fr); align-items: start; padding-top: 28px; }
+    .hero h1 { margin-bottom: 20px; }
+    .hero-lead { margin-bottom: 28px; }
     .hero-text { padding-bottom: 0; }
-    .hero-media img { height: 56vh; }
+    .hero-media img { height: min(52vh, 460px); height: min(52svh, 460px); }
 
     .about { grid-template-columns: minmax(0, 1fr); }
-    .about-photo { width: 140px; }
+    .about-photo { width: 120px; }
 
-    .nav-inner { height: auto; flex-wrap: wrap; row-gap: 0; padding-block: 10px; }
-    nav[aria-label="Sections"] { order: 3; width: calc(100% + 16px); overflow-x: auto; margin-inline: -8px; }
+    .nav-inner { height: auto; flex-wrap: wrap; row-gap: 0; padding-block: 6px 0; }
+    nav[aria-label="Sections"] { order: 3; width: calc(100% + 16px); overflow-x: auto; margin-inline: -8px; scrollbar-width: none; }
     .nav-links { gap: 0; }
-    .nav-links a { padding: 6px 8px; white-space: nowrap; }
+    .nav-links a { padding: 10px 8px; white-space: nowrap; }
 
+    .paper-feature { padding: 20px; }
     .pub-list li, .timeline li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
 
     .mini-projects li { grid-template-columns: 96px minmax(0, 1fr); gap: 16px; }
 
-    .project-mosaic {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: "text" "team" "car" "map" "track";
-    }
+    .project-mosaic { grid-template-columns: minmax(0, 1fr); grid-template-areas: "text" "team" "strip"; }
 
-    .filmstrip { grid-auto-columns: 70%; }
+    /* Image rows become swipeable carousels: each card takes most of the screen
+       and the next one peeks in from the edge, so the gesture is discoverable. */
+    .swipe {
+        display: grid;
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 84%;
+        gap: 12px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: var(--gutter);
+        margin-inline: calc(-1 * var(--gutter));
+        padding-inline: var(--gutter);
+        padding-bottom: 6px;
+        scrollbar-width: none;
+    }
+    .swipe::-webkit-scrollbar { display: none; }
+    .swipe > * { scroll-snap-align: start; min-width: 0; }
+    .vision-row-1.swipe { align-items: start; }
+
     .data-row dd { font-size: 1.1rem; }
+}
+
+/* Touch screens: bigger hit areas without moving the layout
+   (vertical padding on inline links grows the tap target, not the line). */
+@media (pointer: coarse) {
+    .text-link, .mini-links a, .paper-venue a, .nav-name { padding-block: 10px; }
+    .contact-links a { padding-block: 8px; }
+    .theme-toggle { width: 44px; height: 44px; }
+    .lightbox-btn { width: 48px; height: 48px; }
+}
+
+/* Hover-only flourishes stay on devices that can hover. */
+@media (hover: none) {
+    .sheet a:hover { transform: none; }
+    .filmstrip a:hover img { transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
