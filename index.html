@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
-    <link rel="stylesheet" href="style.css?v=20261011">
+    <link rel="stylesheet" href="style.css?v=20261012">
     <script>
         // Apply the saved theme before first paint to avoid a flash.
         try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
@@ -140,7 +140,13 @@
                     </header>
                     <div class="prose">
                         <p>QUPA is CoRAL's low-cost robot for swarm robotics research and the platform of our social-learning paper. I worked on every iteration after the first prototype: the main board in EasyEDA, review of the mechanical design and its SolidWorks documentation, and now its omnidirectional vision.</p>
-                        <p class="stack">SolidWorks · EasyEDA · 2-layer PCB · ROS 2 · Blender · FreeRTOS</p>
+                        <p>I also built its Gazebo simulators. The ROS&nbsp;2 version publishes the same topics and messages as the real robot, so a behaviour runs unchanged in simulation and on hardware.</p>
+                        <p class="stack">SolidWorks · EasyEDA · 2-layer PCB · ROS 1/2 · Gazebo · Blender · FreeRTOS</p>
+                        <p class="link-row">
+                            <a class="text-link" href="https://github.com/davatorr1009/qupa_simulation" target="_blank" rel="noopener">Simulator, ROS 2 <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <a class="text-link" href="https://github.com/coral-espol/qupa_gazebo" target="_blank" rel="noopener">Simulator, ROS 1 <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                            <a class="text-link" href="https://github.com/davatorr1009/qupa_demo" target="_blank" rel="noopener">Real-robot demo <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                        </p>
                     </div>
                 </div>
 
@@ -216,7 +222,6 @@
                             <div><dt>Task time, 3 robots vs 1</dt><dd>−58.5%</dd></div>
                         </dl>
                         <p class="stack">ROS Noetic · Python · C++ · OpenCV · ARGoS · Gazebo</p>
-                        <a class="text-link" href="https://github.com/coral-espol/qupa_gazebo" target="_blank" rel="noopener">Simulation repository <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
                     </div>
                     <figure class="video">
                         <video controls playsinline preload="none" poster="assets/img/Qupa_sim.png">
@@ -255,21 +260,21 @@
                 <div class="prose">
                     <header class="project-head">
                         <h3>Autonomous racing</h3>
-                        <p class="project-meta">Roboracer Ecuador · 1st place · 2025</p>
+                        <p class="project-meta">International Robot Olympiad Open Ecuador · RoboRacer · Gold medal · Oct 2025</p>
                     </header>
-                    <p>I led ESPOL's AIRoS team to first place in Roboracer Ecuador, racing 1/10-scale autonomous cars built on a Jetson Orin Nano, a 2D LiDAR and a VESC motor controller. A second AIRoS team finished second.</p>
+                    <p>I led ESPOL's AIRoS team to the gold medal in the RoboRacer category of the International Robot Olympiad (IRO) Open Ecuador 2025, racing 1/10-scale autonomous cars built on a Jetson Orin Nano, a 2D LiDAR and a VESC motor controller. A second AIRoS team finished second.</p>
                     <p>I worked on the full autonomy stack (mapping, localisation, path planning and control) and coordinated the team's hardware work.</p>
                 </div>
                 <figure class="mosaic-team">
-                    <a href="assets/img/airos/race2.jpeg" target="_blank"><img src="assets/img/airos/race2.jpeg" alt="The AIRoS team with their medals, the race car and a Jetson Orin Nano box at the Roboracer Ecuador 2025 awards" width="1280" height="960" loading="lazy"></a>
-                    <figcaption>The AIRoS team at the Roboracer Ecuador 2025 awards.</figcaption>
+                    <a href="assets/img/airos/race2.jpeg" target="_blank"><img src="assets/img/airos/race2.jpeg" alt="The AIRoS team with their medals, the race car and a Jetson Orin Nano box at the IRO Open Ecuador 2025 awards" width="1280" height="960" loading="lazy"></a>
+                    <figcaption>The AIRoS team at the IRO Open Ecuador 2025 awards.</figcaption>
                 </figure>
                 <div class="mosaic-strip swipe">
                     <figure class="mosaic-video">
                         <video controls playsinline muted preload="metadata" data-speed="2">
                             <source src="assets/img/airos/race.mp4#t=0.1" type="video/mp4">
                         </video>
-                        <figcaption>A run on the Roboracer Ecuador track, played at 2× speed.</figcaption>
+                        <figcaption>A run on the RoboRacer track, played at 2× speed.</figcaption>
                     </figure>
                     <figure class="mosaic-map">
                         <a href="assets/img/airos/planning.png" target="_blank"><img src="assets/img/airos/planning.png" alt="SLAM map of the race track with planned and driven trajectories" width="918" height="603" loading="lazy"></a>
@@ -316,42 +321,42 @@
             <h2 id="exp-title">Experience</h2>
             <ol class="timeline">
                 <li>
-                    <span class="when">2026 – now</span>
+                    <span class="when">Jan 2026 – now</span>
                     <div>
                         <p class="role">Lab Technician <span>Bioengineering &amp; Unmanned Vehicles Lab, ESPOL</span></p>
                         <p>Commissioning the new lab: sourcing LiDARs, depth cameras and controllers, setting up workstations, and writing safety protocols for LiPo storage and robot testing.</p>
                     </div>
                 </li>
                 <li>
-                    <span class="when">2024 – now</span>
+                    <span class="when">Aug 2024 – now</span>
                     <div>
                         <p class="role">Research Assistant <span>CoRAL Lab, ESPOL · with UCD, Ireland</span></p>
                         <p>Worked on every iteration of the QUPA swarm robot after the first prototype (electronics, mechanical design review, on-board software and omnidirectional vision) and on its manipulation actuators. Responsible for the physical-robot experiments of our social-learning paper: real-world validation with eight QUPA robots. Built the ROS&nbsp;1 simulators, URDF models and Gazebo plugins that became CoRAL's simulation infrastructure.</p>
                     </div>
                 </li>
                 <li>
-                    <span class="when">2024 – 2025</span>
+                    <span class="when">Oct 2024 – Sep 2025</span>
                     <div>
                         <p class="role">Teaching Assistant <span>Mobile and Articulated Robots, ESPOL</span></p>
                         <p>Designed and ran lab sessions on mobile robots (Lego Mindstorms, Robotino, ROS) and ABB industrial arms (kinematics, motion planning).</p>
                     </div>
                 </li>
                 <li>
-                    <span class="when">2023 – 2025</span>
+                    <span class="when">Feb 2023 – now</span>
                     <div>
-                        <p class="role">Automation Engineer, part-time <span>WG Selcon, Ecuador</span></p>
+                        <p class="role">Automation Engineer, independent contractor <span>WG Selcon, Ecuador</span></p>
                         <p>PLC-based automation (Siemens) for compressors, hydraulic rolling machines and power-factor correction: panel design, PLC and HMI software, drive integration, on-site commissioning.</p>
                     </div>
                 </li>
                 <li>
-                    <span class="when">2024</span>
+                    <span class="when">Feb – Nov 2024</span>
                     <div>
                         <p class="role">Research Intern, remote <span>RISE Lab, Sungkyunkwan University · project with HD Hyundai Robotics, South Korea</span></p>
                         <p>Navigation benchmarking in ROS&nbsp;2 and Gazebo (see Research).</p>
                     </div>
                 </li>
                 <li>
-                    <span class="when">2025</span>
+                    <span class="when">Oct 2025</span>
                     <div>
                         <p class="role">B.Sc. Mechatronics Engineering <span>ESPOL, Ecuador</span></p>
                     </div>
@@ -366,8 +371,8 @@
             </figure>
             <div class="prose">
                 <h2 id="community-title">Community</h2>
-                <p>I co-founded AIRoS, ESPOL's student society for AI and robotics, and served as vice-president in 2024–2025. We trained undergraduates in ROS and autonomous navigation, organised talks with international PhD researchers at USFQ, ESPE and UCSG, and entered Roboracer Ecuador with two teams that took first and second place.</p>
-                <p>Members published three conference papers and two journal articles during that period. For this work I received the AIRoS/ESPOL Gold Recognition for student leadership in 2025.</p>
+                <p>I co-founded AIRoS, ESPOL's student society for AI and robotics, and served as vice-president from September 2024 to September 2025. We trained undergraduates in ROS and autonomous navigation, organised talks with international PhD researchers at USFQ, ESPE and UCSG, and entered the RoboRacer category of IRO Open Ecuador 2025 with two teams that took first and second place.</p>
+                <p>Members published three conference papers and two journal articles during that period.</p>
             </div>
         </section>
 
@@ -380,7 +385,7 @@
                 <li><a href="https://github.com/davatorr1009" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i>GitHub</a></li>
                 <li><span><i class="ph ph-map-pin" aria-hidden="true"></i>Guayaquil, Ecuador</span></li>
             </ul>
-            <p class="on-request">CV, ROS certification (ABK), TOEFL iBT report, RISE Lab internship certificate, Holcim Innovation Chair and AIRoS Gold Recognition are available on request.</p>
+            <p class="on-request">CV, ROS certification (ABK), TOEFL iBT report, RISE Lab internship certificate, Holcim Innovation Chair and IRO Open Ecuador 2025 gold-medal certificate are available on request.</p>
         </section>
 
     </main>
