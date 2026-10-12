@@ -831,3 +831,5 @@ html:has(.lightbox[open]) { overflow: hidden; }
 
 .link-row { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-top: 14px !important; }
 .link-row .text-link { margin-top: 0; }
+
+.prose .note { margin-top: 8px !important; font-size: 0.875rem; color: var(--ink-3); }
